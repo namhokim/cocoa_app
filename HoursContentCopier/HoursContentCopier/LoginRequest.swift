@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct LoginRequest : Codable {
+struct LoginRequest : Codable {
     var email : String
     var password : String
     var deviceID : String
@@ -21,16 +21,14 @@ public struct LoginRequest : Codable {
         self.devicename = "web:\(email)"
     }
     
+    /// Data로 바꾸기 위해서는 아래와 같이 사용한다.
+    /// jsonString?.data(using: .utf8, allowLossyConversion: false)
     func toJsonString() -> String {
-        return ""
+        let encoder = JSONEncoder()
+        let loginJson = try? encoder.encode(self)
+        let jsonString = String(data: loginJson!, encoding: .utf8)
+        return jsonString!
     }
 }
 
-struct LoginResponse : Codable {
-    var status : String
-    var result : LoginResult
-}
 
-struct LoginResult : Codable {
-    var token : String
-}

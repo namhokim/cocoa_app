@@ -37,41 +37,42 @@ class ViewController: NSViewController {
             outputPanel.stringValue = "Need input password"
             return
         }
-        let output = requestApi(email: email, password: password);
-        outputPanel.stringValue = output
+        displayContentByPickupDate(email: email, password: password)
     }
     
-    func requestApi(email: String, password: String) -> String {
-        let loginData = LoginRequest(email: email, password: password)
-        let encoder = JSONEncoder()
-        let loginJson = try? encoder.encode(loginData)
-        if (loginJson == nil) {
-            return "Cannot serialize"
-        }
-        let jsonString = String(data: loginJson!, encoding: .utf8)
-        let jsonData = jsonString?.data(using: .utf8, allowLossyConversion: false)
-        
-        
+    func displayContentByPickupDate(email: String, password: String) {
+        accessToken(email: email, password: password)
+    }
+    
+    func accessToken(email: String, password: String) {
         let loginUrl = URL(string: "https://api2.hoursforteams.com/index.php/api/users/login")!
         var request = URLRequest(url: loginUrl)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonData
+        request.httpBody = LoginRequest(email: email, password: password)
+            .toJsonString().data(using: .utf8, allowLossyConversion: false)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
+                self.outputToPanel(message: error?.localizedDescription ?? "No data")
                 return
             }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
+            
+            let result = LoginResponse.fromJsonData(data: data)
+            if (result.status == "ok") {
+                self.outputToPanel(message: result.result.token)
+            } else {
+                self.outputToPanel(message: result.error_message)
             }
+            
         }
         task.resume()
-        
-        let output = "Hello \(email)!"
-        return output
+    }
+    
+    func outputToPanel(message: String) {
+        DispatchQueue.main.async {
+            self.outputPanel.stringValue = message
+        }
     }
     
 }

@@ -43,8 +43,10 @@ class LoginRequestTests: XCTestCase {
         let result = request.toJsonString()
         
         // then
-        let expectedResult = ""
-        XCTAssert(result == expectedResult)
+        let expectedResult = """
+{"email":"my-email","password":"my-password","deviceID":"web:my-email","devicename":"web:my-email"}
+"""
+        XCTAssert(result == expectedResult, result)
     }
-
+    
 }
