@@ -20,9 +20,7 @@ class LogoutResponseTests: XCTestCase {
 
     func testFromJsonString__logout_success() {
         // given
-        let responseJson = """
-{"status":"ok","result":"Logged out."}
-"""
+        let responseJson = #"{"status":"ok","result":"Logged out."}"#
         
         // when
         let result = LogoutResponse.fromJsonData(data: responseJson.data(using: .utf8)!)
@@ -34,9 +32,7 @@ class LogoutResponseTests: XCTestCase {
     
     func testFromJsonString__logout_fail() {
         // given
-        let responseJson = """
-{"status":"error","error_code":401,"error_message":"Login Required."}
-"""
+        let responseJson = #"{"status":"error","error_code":401,"error_message":"Login Required."}"#
         
         // when
         let result = LogoutResponse.fromJsonData(data: responseJson.data(using: .utf8)!)

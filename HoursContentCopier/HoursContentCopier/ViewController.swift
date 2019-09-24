@@ -69,6 +69,14 @@ class ViewController: NSViewController {
         task.resume()
     }
     
+    func epochToTime(epoch: Int) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: Locale.current.identifier)
+        formatter.dateFormat = "HH:mm"
+        
+        return formatter.string(from: Date(timeIntervalSince1970: Double(epoch)))
+    }
+    
     func getTimersPerDay(token: String, dateRange: DateRange) {
         let timersUrl = URL(string: "https://api3.hoursforteams.com/index.php/api/timers/day/\(dateRange.begin)/0/\(dateRange.end)")!
         var request = URLRequest(url: timersUrl)
@@ -81,7 +89,21 @@ class ViewController: NSViewController {
                 return
             }
             
-            self.outputToPanel(message: String(data: data, encoding: .utf8)!)
+            let result = TimersResponse.fromJsonData(data: data)
+            if (result.status == "ok") {
+                var message = ""
+                for i in 0..<result.result.time_entries.count {
+                    let entry = result.result.time_entries[i]
+                    let begin = self.epochToTime(epoch: entry.date_entry)
+                    let end = self.epochToTime(epoch: entry.date_end)
+                    let task = entry.note_text.count == 0 ? entry.task_name : entry.note_text
+                    let line = "\(begin)-\(end) \(task)\n"
+                    message += line
+                }
+                self.outputToPanel(message: message)
+            } else {
+                self.outputToPanel(message: String(data: data, encoding: .utf8)!)
+            }
             self.expireToken(token: token)
         }
         task.resume()

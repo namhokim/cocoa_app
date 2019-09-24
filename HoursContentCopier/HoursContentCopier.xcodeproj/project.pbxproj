@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A8D4A27233A6D7F00B21E69 /* TimersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */; };
+		3A8D4A29233A767F00B21E69 /* TimersResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D4A28233A767F00B21E69 /* TimersResponseTests.swift */; };
+		3A8D4A2A233A768500B21E69 /* TimersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */; };
 		3A96D8FB233A1035004F442A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96D8FA233A1035004F442A /* LoginRequest.swift */; };
-		3A96D903233A2265004F442A /* HoursContentCopierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96D902233A2265004F442A /* HoursContentCopierTests.swift */; };
 		3A96D90B233A23EB004F442A /* LoginRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96D90A233A23EB004F442A /* LoginRequestTests.swift */; };
 		3A96D90C233A258C004F442A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96D8FA233A1035004F442A /* LoginRequest.swift */; };
 		3AA16E54233A02E300D25BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA16E53233A02E300D25BFB /* AppDelegate.swift */; };
@@ -37,9 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersResponse.swift; sourceTree = "<group>"; };
+		3A8D4A28233A767F00B21E69 /* TimersResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersResponseTests.swift; sourceTree = "<group>"; };
 		3A96D8FA233A1035004F442A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		3A96D900233A2265004F442A /* HoursContentCopierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoursContentCopierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A96D902233A2265004F442A /* HoursContentCopierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursContentCopierTests.swift; sourceTree = "<group>"; };
 		3A96D904233A2265004F442A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A96D90A233A23EB004F442A /* LoginRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestTests.swift; sourceTree = "<group>"; };
 		3AA16E50233A02E300D25BFB /* HoursContentCopier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoursContentCopier.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,12 +82,12 @@
 		3A96D901233A2265004F442A /* HoursContentCopierTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A96D902233A2265004F442A /* HoursContentCopierTests.swift */,
+				3A96D904233A2265004F442A /* Info.plist */,
 				3A96D90A233A23EB004F442A /* LoginRequestTests.swift */,
 				3ADB215C233A42B700596320 /* LoginResponseTests.swift */,
 				3ADB2161233A537600596320 /* LogoutResponseTests.swift */,
 				3ADB2167233A5DC900596320 /* DateRangeTests.swift */,
-				3A96D904233A2265004F442A /* Info.plist */,
+				3A8D4A28233A767F00B21E69 /* TimersResponseTests.swift */,
 			);
 			path = HoursContentCopierTests;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 				3ADB215A233A429E00596320 /* LoginResponse.swift */,
 				3ADB215F233A531A00596320 /* LogoutResponse.swift */,
 				3ADB2165233A5CD800596320 /* DateRange.swift */,
+				3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */,
 			);
 			path = HoursContentCopier;
 			sourceTree = "<group>";
@@ -230,12 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8D4A2A233A768500B21E69 /* TimersResponse.swift in Sources */,
 				3A96D90C233A258C004F442A /* LoginRequest.swift in Sources */,
-				3A96D903233A2265004F442A /* HoursContentCopierTests.swift in Sources */,
 				3ADB2162233A537600596320 /* LogoutResponseTests.swift in Sources */,
 				3ADB215D233A42B700596320 /* LoginResponseTests.swift in Sources */,
 				3ADB2163233A53FA00596320 /* LogoutResponse.swift in Sources */,
 				3ADB2169233A5DCE00596320 /* DateRange.swift in Sources */,
+				3A8D4A29233A767F00B21E69 /* TimersResponseTests.swift in Sources */,
 				3ADB2168233A5DC900596320 /* DateRangeTests.swift in Sources */,
 				3A96D90B233A23EB004F442A /* LoginRequestTests.swift in Sources */,
 				3ADB215E233A43F600596320 /* LoginResponse.swift in Sources */,
@@ -249,6 +254,7 @@
 				3AA16E56233A02E300D25BFB /* ViewController.swift in Sources */,
 				3AA16E54233A02E300D25BFB /* AppDelegate.swift in Sources */,
 				3ADB215B233A429E00596320 /* LoginResponse.swift in Sources */,
+				3A8D4A27233A6D7F00B21E69 /* TimersResponse.swift in Sources */,
 				3A96D8FB233A1035004F442A /* LoginRequest.swift in Sources */,
 				3ADB2160233A531A00596320 /* LogoutResponse.swift in Sources */,
 				3ADB2166233A5CD800596320 /* DateRange.swift in Sources */,

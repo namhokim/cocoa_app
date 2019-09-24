@@ -729,11 +729,9 @@
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
                             </secureTextField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="431-Vh-jzb">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="431-Vh-jzb">
                                 <rect key="frame" x="20" y="20" width="440" height="166"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="166" id="4Dn-I7-IuJ"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Rhp-V2-FGc">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -766,7 +764,6 @@
                             </datePicker>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="VhY-58-IBI" firstAttribute="leading" secondItem="431-Vh-jzb" secondAttribute="leading" id="20P-85-TPV"/>
                             <constraint firstItem="Xnc-c6-Cdw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="DIt-li-2JN"/>
                             <constraint firstItem="Xnc-c6-Cdw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="LKo-1v-E8p"/>
                             <constraint firstAttribute="trailing" secondItem="jiu-J5-ph3" secondAttribute="trailing" constant="20" symbolic="YES" id="a4E-X3-h0c"/>
@@ -774,10 +771,8 @@
                             <constraint firstItem="oLa-x1-1as" firstAttribute="leading" secondItem="VhY-58-IBI" secondAttribute="trailing" constant="38" id="cew-uv-SfG"/>
                             <constraint firstItem="VhY-58-IBI" firstAttribute="top" secondItem="Xnc-c6-Cdw" secondAttribute="bottom" constant="10" symbolic="YES" id="fqu-qg-dbP"/>
                             <constraint firstItem="Xnc-c6-Cdw" firstAttribute="leading" secondItem="VhY-58-IBI" secondAttribute="leading" id="m7m-n8-UU6"/>
-                            <constraint firstItem="jiu-J5-ph3" firstAttribute="trailing" secondItem="431-Vh-jzb" secondAttribute="trailing" id="nPx-ao-pIb"/>
                             <constraint firstItem="Xnc-c6-Cdw" firstAttribute="trailing" secondItem="VhY-58-IBI" secondAttribute="trailing" id="o0r-pT-Fbr"/>
                             <constraint firstItem="oLa-x1-1as" firstAttribute="baseline" secondItem="jiu-J5-ph3" secondAttribute="baseline" id="o3P-Qd-yJl"/>
-                            <constraint firstItem="431-Vh-jzb" firstAttribute="top" secondItem="VhY-58-IBI" secondAttribute="bottom" constant="10" symbolic="YES" id="umk-Yk-CCB"/>
                             <constraint firstItem="jiu-J5-ph3" firstAttribute="leading" secondItem="oLa-x1-1as" secondAttribute="trailing" constant="8" symbolic="YES" id="yP9-yf-NSI"/>
                         </constraints>
                     </view>
