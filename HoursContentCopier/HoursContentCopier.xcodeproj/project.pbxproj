@@ -18,6 +18,9 @@
 		3ADB215B233A429E00596320 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB215A233A429E00596320 /* LoginResponse.swift */; };
 		3ADB215D233A42B700596320 /* LoginResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB215C233A42B700596320 /* LoginResponseTests.swift */; };
 		3ADB215E233A43F600596320 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB215A233A429E00596320 /* LoginResponse.swift */; };
+		3ADB2160233A531A00596320 /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB215F233A531A00596320 /* LogoutResponse.swift */; };
+		3ADB2162233A537600596320 /* LogoutResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB2161233A537600596320 /* LogoutResponseTests.swift */; };
+		3ADB2163233A53FA00596320 /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB215F233A531A00596320 /* LogoutResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,8 @@
 		3AA16E5D233A02E500D25BFB /* HoursContentCopier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HoursContentCopier.entitlements; sourceTree = "<group>"; };
 		3ADB215A233A429E00596320 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		3ADB215C233A42B700596320 /* LoginResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseTests.swift; sourceTree = "<group>"; };
+		3ADB215F233A531A00596320 /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
+		3ADB2161233A537600596320 /* LogoutResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoutResponseTests.swift; path = HoursContentCopierTests/LogoutResponseTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +73,10 @@
 		3A96D901233A2265004F442A /* HoursContentCopierTests */ = {
 			isa = PBXGroup;
 			children = (
+				3A96D902233A2265004F442A /* HoursContentCopierTests.swift */,
 				3A96D90A233A23EB004F442A /* LoginRequestTests.swift */,
 				3ADB215C233A42B700596320 /* LoginResponseTests.swift */,
-				3A96D902233A2265004F442A /* HoursContentCopierTests.swift */,
+				3ADB2161233A537600596320 /* LogoutResponseTests.swift */,
 				3A96D904233A2265004F442A /* Info.plist */,
 			);
 			path = HoursContentCopierTests;
@@ -105,6 +111,7 @@
 				3AA16E5D233A02E500D25BFB /* HoursContentCopier.entitlements */,
 				3A96D8FA233A1035004F442A /* LoginRequest.swift */,
 				3ADB215A233A429E00596320 /* LoginResponse.swift */,
+				3ADB215F233A531A00596320 /* LogoutResponse.swift */,
 			);
 			path = HoursContentCopier;
 			sourceTree = "<group>";
@@ -216,7 +223,9 @@
 			files = (
 				3A96D90C233A258C004F442A /* LoginRequest.swift in Sources */,
 				3A96D903233A2265004F442A /* HoursContentCopierTests.swift in Sources */,
+				3ADB2162233A537600596320 /* LogoutResponseTests.swift in Sources */,
 				3ADB215D233A42B700596320 /* LoginResponseTests.swift in Sources */,
+				3ADB2163233A53FA00596320 /* LogoutResponse.swift in Sources */,
 				3A96D90B233A23EB004F442A /* LoginRequestTests.swift in Sources */,
 				3ADB215E233A43F600596320 /* LoginResponse.swift in Sources */,
 			);
@@ -230,6 +239,7 @@
 				3AA16E54233A02E300D25BFB /* AppDelegate.swift in Sources */,
 				3ADB215B233A429E00596320 /* LoginResponse.swift in Sources */,
 				3A96D8FB233A1035004F442A /* LoginRequest.swift in Sources */,
+				3ADB2160233A531A00596320 /* LogoutResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

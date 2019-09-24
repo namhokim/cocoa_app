@@ -61,6 +61,30 @@ class ViewController: NSViewController {
             let result = LoginResponse.fromJsonData(data: data)
             if (result.status == "ok") {
                 self.outputToPanel(message: result.result.token)
+                self.expireToken(token: result.result.token)
+            } else {
+                self.outputToPanel(message: result.error_message)
+            }
+            
+        }
+        task.resume()
+    }
+    
+    func expireToken(token: String) {
+        let logoutUrl = URL(string: "https://api2.hoursforteams.com/index.php/api/users/logout")!
+        var request = URLRequest(url: logoutUrl)
+        request.httpMethod = "GET"
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                self.outputToPanel(message: error?.localizedDescription ?? "No data")
+                return
+            }
+            
+            let result = LogoutResponse.fromJsonData(data: data)
+            if (result.status == "ok") {
+                self.outputToPanel(message: result.result)
             } else {
                 self.outputToPanel(message: result.error_message)
             }
