@@ -710,18 +710,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xnc-c6-Cdw">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xnc-c6-Cdw">
                                 <rect key="frame" x="20" y="228" width="223" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="vsQ-1c-N1x">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VhY-58-IBI">
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VhY-58-IBI">
                                 <rect key="frame" x="20" y="196" width="223" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="ofw-sb-TIm">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -731,18 +729,19 @@
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
                             </secureTextField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="431-Vh-jzb">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="431-Vh-jzb">
                                 <rect key="frame" x="20" y="20" width="440" height="166"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="4Dn-I7-IuJ"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Rhp-V2-FGc">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jiu-J5-ph3">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jiu-J5-ph3">
                                 <rect key="frame" x="392" y="189" width="74" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tD1-RG-gi5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -751,9 +750,11 @@
                                     <action selector="executionClicked:" target="XfG-lQ-9wD" id="inA-1Y-B0Q"/>
                                 </connections>
                             </button>
-                            <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oLa-x1-1as">
+                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oLa-x1-1as">
                                 <rect key="frame" x="281" y="196" width="109" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="iS1-et-e8v"/>
+                                </constraints>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerStyle="textField" id="UnI-li-rE0">
                                     <font key="font" metaFont="system"/>
                                     <date key="date" timeIntervalSinceReferenceDate="-595929600">
@@ -764,6 +765,21 @@
                                 </datePickerCell>
                             </datePicker>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="VhY-58-IBI" firstAttribute="leading" secondItem="431-Vh-jzb" secondAttribute="leading" id="20P-85-TPV"/>
+                            <constraint firstItem="Xnc-c6-Cdw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="DIt-li-2JN"/>
+                            <constraint firstItem="Xnc-c6-Cdw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="LKo-1v-E8p"/>
+                            <constraint firstAttribute="trailing" secondItem="jiu-J5-ph3" secondAttribute="trailing" constant="20" symbolic="YES" id="a4E-X3-h0c"/>
+                            <constraint firstItem="VhY-58-IBI" firstAttribute="baseline" secondItem="oLa-x1-1as" secondAttribute="baseline" id="ams-qd-G3g"/>
+                            <constraint firstItem="oLa-x1-1as" firstAttribute="leading" secondItem="VhY-58-IBI" secondAttribute="trailing" constant="38" id="cew-uv-SfG"/>
+                            <constraint firstItem="VhY-58-IBI" firstAttribute="top" secondItem="Xnc-c6-Cdw" secondAttribute="bottom" constant="10" symbolic="YES" id="fqu-qg-dbP"/>
+                            <constraint firstItem="Xnc-c6-Cdw" firstAttribute="leading" secondItem="VhY-58-IBI" secondAttribute="leading" id="m7m-n8-UU6"/>
+                            <constraint firstItem="jiu-J5-ph3" firstAttribute="trailing" secondItem="431-Vh-jzb" secondAttribute="trailing" id="nPx-ao-pIb"/>
+                            <constraint firstItem="Xnc-c6-Cdw" firstAttribute="trailing" secondItem="VhY-58-IBI" secondAttribute="trailing" id="o0r-pT-Fbr"/>
+                            <constraint firstItem="oLa-x1-1as" firstAttribute="baseline" secondItem="jiu-J5-ph3" secondAttribute="baseline" id="o3P-Qd-yJl"/>
+                            <constraint firstItem="431-Vh-jzb" firstAttribute="top" secondItem="VhY-58-IBI" secondAttribute="bottom" constant="10" symbolic="YES" id="umk-Yk-CCB"/>
+                            <constraint firstItem="jiu-J5-ph3" firstAttribute="leading" secondItem="oLa-x1-1as" secondAttribute="trailing" constant="8" symbolic="YES" id="yP9-yf-NSI"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="ExecutionButton" destination="jiu-J5-ph3" id="FHY-HX-On4"/>
