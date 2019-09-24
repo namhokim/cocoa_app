@@ -10,6 +10,10 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var emailField: NSTextField!
+    @IBOutlet weak var passwordField: NSSecureTextField!
+    @IBOutlet weak var outputPanel: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,14 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func executionClicked(_ sender: Any) {
+        var email = emailField.stringValue
+        if email.isEmpty {
+            email = "Need input email"
+        }
+        let output = "Hello \(email)!"
+        outputPanel.stringValue = output
+    }
+    
 }
 
