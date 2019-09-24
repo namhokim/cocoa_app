@@ -751,10 +751,23 @@
                                     <action selector="executionClicked:" target="XfG-lQ-9wD" id="inA-1Y-B0Q"/>
                                 </connections>
                             </button>
+                            <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oLa-x1-1as">
+                                <rect key="frame" x="281" y="196" width="109" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerStyle="textField" id="UnI-li-rE0">
+                                    <font key="font" metaFont="system"/>
+                                    <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                                        <!--1982-02-12 16:00:00 +0000-->
+                                    </date>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                </datePickerCell>
+                            </datePicker>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="ExecutionButton" destination="jiu-J5-ph3" id="FHY-HX-On4"/>
+                        <outlet property="datePicker" destination="oLa-x1-1as" id="boT-vV-jgb"/>
                         <outlet property="emailField" destination="Xnc-c6-Cdw" id="gAx-Hu-bR6"/>
                         <outlet property="outputPanel" destination="431-Vh-jzb" id="dht-dX-cvP"/>
                         <outlet property="passwordField" destination="VhY-58-IBI" id="hmy-5H-c3x"/>

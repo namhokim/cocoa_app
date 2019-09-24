@@ -13,11 +13,14 @@ class ViewController: NSViewController {
     @IBOutlet weak var emailField: NSTextField!
     @IBOutlet weak var passwordField: NSSecureTextField!
     @IBOutlet weak var outputPanel: NSTextField!
+    @IBOutlet weak var datePicker: NSDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        datePicker.locale = Locale(identifier: Locale.current.identifier)
+        datePicker.dateValue = Date()
     }
 
     override var representedObject: Any? {
@@ -37,14 +40,11 @@ class ViewController: NSViewController {
             outputPanel.stringValue = "Need input password"
             return
         }
-        displayContentByPickupDate(email: email, password: password)
+        let dateRange = DateRange(targetDate: datePicker.dateValue)
+        accessToken(email: email, password: password, dateRange: dateRange)
     }
     
-    func displayContentByPickupDate(email: String, password: String) {
-        accessToken(email: email, password: password)
-    }
-    
-    func accessToken(email: String, password: String) {
+    func accessToken(email: String, password: String, dateRange: DateRange) {
         let loginUrl = URL(string: "https://api2.hoursforteams.com/index.php/api/users/login")!
         var request = URLRequest(url: loginUrl)
         request.httpMethod = "POST"
@@ -60,12 +60,29 @@ class ViewController: NSViewController {
             
             let result = LoginResponse.fromJsonData(data: data)
             if (result.status == "ok") {
-                self.outputToPanel(message: result.result.token)
-                self.expireToken(token: result.result.token)
+                self.getTimersPerDay(token: result.result.token, dateRange: dateRange)
             } else {
                 self.outputToPanel(message: result.error_message)
             }
             
+        }
+        task.resume()
+    }
+    
+    func getTimersPerDay(token: String, dateRange: DateRange) {
+        let timersUrl = URL(string: "https://api3.hoursforteams.com/index.php/api/timers/day/\(dateRange.begin)/0/\(dateRange.end)")!
+        var request = URLRequest(url: timersUrl)
+        request.httpMethod = "GET"
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                self.outputToPanel(message: error?.localizedDescription ?? "No data")
+                return
+            }
+            
+            self.outputToPanel(message: String(data: data, encoding: .utf8)!)
+            self.expireToken(token: token)
         }
         task.resume()
     }
@@ -84,9 +101,9 @@ class ViewController: NSViewController {
             
             let result = LogoutResponse.fromJsonData(data: data)
             if (result.status == "ok") {
-                self.outputToPanel(message: result.result)
+                print("logout: \(result.result)")
             } else {
-                self.outputToPanel(message: result.error_message)
+                print("logout: \(result.error_message)")
             }
             
         }
