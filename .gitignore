@@ -1,2 +1,3 @@
 
-HoursContentCopier/HoursContentCopier.xcodeproj/xcuserdata/
+*.xcuserstate
+*.xcbkptlist
