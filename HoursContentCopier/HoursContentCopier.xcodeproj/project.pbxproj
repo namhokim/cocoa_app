@@ -7,13 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A96D8FB233A1035004F442A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96D8FA233A1035004F442A /* LoginRequest.swift */; };
+		3A96D903233A2265004F442A /* HoursContentCopierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96D902233A2265004F442A /* HoursContentCopierTests.swift */; };
+		3A96D90B233A23EB004F442A /* LoginRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96D90A233A23EB004F442A /* LoginRequestTests.swift */; };
+		3A96D90C233A258C004F442A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96D8FA233A1035004F442A /* LoginRequest.swift */; };
 		3AA16E54233A02E300D25BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA16E53233A02E300D25BFB /* AppDelegate.swift */; };
 		3AA16E56233A02E300D25BFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA16E55233A02E300D25BFB /* ViewController.swift */; };
 		3AA16E58233A02E500D25BFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AA16E57233A02E500D25BFB /* Assets.xcassets */; };
 		3AA16E5B233A02E500D25BFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA16E59233A02E500D25BFB /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3A96D905233A2265004F442A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AA16E48233A02E300D25BFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AA16E4F233A02E300D25BFB;
+			remoteInfo = HoursContentCopier;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3A96D8FA233A1035004F442A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		3A96D900233A2265004F442A /* HoursContentCopierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoursContentCopierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A96D902233A2265004F442A /* HoursContentCopierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursContentCopierTests.swift; sourceTree = "<group>"; };
+		3A96D904233A2265004F442A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A96D90A233A23EB004F442A /* LoginRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestTests.swift; sourceTree = "<group>"; };
 		3AA16E50233A02E300D25BFB /* HoursContentCopier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoursContentCopier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA16E53233A02E300D25BFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA16E55233A02E300D25BFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +43,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3A96D8FD233A2265004F442A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AA16E4D233A02E300D25BFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,10 +60,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A96D901233A2265004F442A /* HoursContentCopierTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A96D90A233A23EB004F442A /* LoginRequestTests.swift */,
+				3A96D902233A2265004F442A /* HoursContentCopierTests.swift */,
+				3A96D904233A2265004F442A /* Info.plist */,
+			);
+			path = HoursContentCopierTests;
+			sourceTree = "<group>";
+		};
 		3AA16E47233A02E300D25BFB = {
 			isa = PBXGroup;
 			children = (
 				3AA16E52233A02E300D25BFB /* HoursContentCopier */,
+				3A96D901233A2265004F442A /* HoursContentCopierTests */,
 				3AA16E51233A02E300D25BFB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				3AA16E50233A02E300D25BFB /* HoursContentCopier.app */,
+				3A96D900233A2265004F442A /* HoursContentCopierTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +97,7 @@
 				3AA16E59233A02E500D25BFB /* Main.storyboard */,
 				3AA16E5C233A02E500D25BFB /* Info.plist */,
 				3AA16E5D233A02E500D25BFB /* HoursContentCopier.entitlements */,
+				3A96D8FA233A1035004F442A /* LoginRequest.swift */,
 			);
 			path = HoursContentCopier;
 			sourceTree = "<group>";
@@ -66,6 +105,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3A96D8FF233A2265004F442A /* HoursContentCopierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A96D909233A2265004F442A /* Build configuration list for PBXNativeTarget "HoursContentCopierTests" */;
+			buildPhases = (
+				3A96D8FC233A2265004F442A /* Sources */,
+				3A96D8FD233A2265004F442A /* Frameworks */,
+				3A96D8FE233A2265004F442A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A96D906233A2265004F442A /* PBXTargetDependency */,
+			);
+			name = HoursContentCopierTests;
+			productName = HoursContentCopierTests;
+			productReference = 3A96D900233A2265004F442A /* HoursContentCopierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3AA16E4F233A02E300D25BFB /* HoursContentCopier */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AA16E60233A02E500D25BFB /* Build configuration list for PBXNativeTarget "HoursContentCopier" */;
@@ -93,8 +150,17 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = namo;
 				TargetAttributes = {
+					3A96D8FF233A2265004F442A = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 3AA16E4F233A02E300D25BFB;
+					};
 					3AA16E4F233A02E300D25BFB = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -112,11 +178,19 @@
 			projectRoot = "";
 			targets = (
 				3AA16E4F233A02E300D25BFB /* HoursContentCopier */,
+				3A96D8FF233A2265004F442A /* HoursContentCopierTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3A96D8FE233A2265004F442A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AA16E4E233A02E300D25BFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,16 +203,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3A96D8FC233A2265004F442A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A96D90C233A258C004F442A /* LoginRequest.swift in Sources */,
+				3A96D903233A2265004F442A /* HoursContentCopierTests.swift in Sources */,
+				3A96D90B233A23EB004F442A /* LoginRequestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3AA16E4C233A02E300D25BFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3AA16E56233A02E300D25BFB /* ViewController.swift in Sources */,
 				3AA16E54233A02E300D25BFB /* AppDelegate.swift in Sources */,
+				3A96D8FB233A1035004F442A /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A96D906233A2265004F442A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AA16E4F233A02E300D25BFB /* HoursContentCopier */;
+			targetProxy = 3A96D905233A2265004F442A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3AA16E59233A02E500D25BFB /* Main.storyboard */ = {
@@ -152,6 +245,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3A96D907233A2265004F442A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HoursContentCopierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.namhokim.HoursContentCopierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoursContentCopier.app/Contents/MacOS/HoursContentCopier";
+			};
+			name = Debug;
+		};
+		3A96D908233A2265004F442A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HoursContentCopierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.namhokim.HoursContentCopierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoursContentCopier.app/Contents/MacOS/HoursContentCopier";
+			};
+			name = Release;
+		};
 		3AA16E5E233A02E500D25BFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -306,6 +437,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3A96D909233A2265004F442A /* Build configuration list for PBXNativeTarget "HoursContentCopierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A96D907233A2265004F442A /* Debug */,
+				3A96D908233A2265004F442A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3AA16E4B233A02E300D25BFB /* Build configuration list for PBXProject "HoursContentCopier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
