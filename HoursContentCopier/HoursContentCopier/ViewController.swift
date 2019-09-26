@@ -104,7 +104,7 @@ class ViewController: NSViewController {
             } else {
                 self.outputToPanel(message: String(data: data, encoding: .utf8)!)
             }
-            self.expireToken(token: token)
+            //self.expireToken(token: token)
         }
         task.resume()
     }
