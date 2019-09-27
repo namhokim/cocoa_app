@@ -92,12 +92,20 @@ class ViewController: NSViewController {
             let result = TimersResponse.fromJsonData(data: data)
             if (result.status == "ok") {
                 var message = ""
-                for i in 0..<result.result.time_entries.count {
+                let entryCount = result.result.time_entries.count
+                let lastEntryCount = entryCount - 1
+                for i in 0..<entryCount {
                     let entry = result.result.time_entries[i]
                     let begin = self.epochToTime(epoch: entry.date_entry)
                     let end = self.epochToTime(epoch: entry.date_end)
                     let task = entry.note_text.count == 0 ? entry.task_name : entry.note_text
-                    let line = "\(begin)-\(end) \(task)\n"
+                    
+                    var line: String
+                    if (i < lastEntryCount) {
+                        line = "\(begin)-\(end) \(task)\n"
+                    } else {
+                        line = "\(begin)-\(end) \(task)"
+                    }
                     message += line
                 }
                 self.outputToPanel(message: message)
