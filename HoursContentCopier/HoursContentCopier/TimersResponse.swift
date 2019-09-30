@@ -11,6 +11,8 @@ import Foundation
 struct TimersResponse : Codable {
     var status : String
     var result :TimersResult
+    var error_code : Int
+    var error_message : String
     
     static func fromJsonData(data : Data) -> TimersResponse {
         if (data.count == 0) {
@@ -22,12 +24,16 @@ struct TimersResponse : Codable {
     init() {
         status = "no data"
         result = TimersResult()
+        error_code = -1
+        error_message = ""
     }
     
     init (from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         status = (try? values.decode(String.self, forKey: .status)) ?? "unknown_status"
         result = (try? values.decode(TimersResult.self, forKey: .result)) ?? TimersResult()
+        error_code = (try? values.decode(Int.self, forKey: .error_code)) ?? -1
+        error_message = (try? values.decode(String.self, forKey: .error_message)) ?? "unknown_error_message"
     }
 }
 
