@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+    static var token = ""
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -21,6 +21,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-
+    static func hasToken() -> Bool {
+        return AppDelegate.token != ""
+    }
+    
+    static func getToken() -> String {
+        return AppDelegate.token
+    }
+    
+    static func setToken(token: String) {
+        AppDelegate.token = token
+    }
 }
 

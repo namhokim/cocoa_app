@@ -10,8 +10,6 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    @IBOutlet weak var emailField: NSTextField!
-    @IBOutlet weak var passwordField: NSSecureTextField!
     @IBOutlet weak var outputPanel: NSTextField!
     @IBOutlet weak var datePicker: NSDatePicker!
     
@@ -29,44 +27,17 @@ class ViewController: NSViewController {
         }
     }
 
-    @IBAction func executionClicked(_ sender: Any) {
-        let email = emailField.stringValue
-        if email.isEmpty {
-            outputPanel.stringValue = "Need input email"
-            return
-        }
-        let password = passwordField.stringValue
-        if password.isEmpty {
-            outputPanel.stringValue = "Need input password"
-            return
-        }
+    @IBAction func getContentClicked(_ sender: Any) {
         let dateRange = DateRange(targetDate: datePicker.dateValue)
-        accessToken(email: email, password: password, dateRange: dateRange)
+        if (needLogin()) {
+            self.performSegue(withIdentifier: "loginSeque", sender: self)
+        } else {
+            getTimersPerDay(token: AppDelegate.getToken(), dateRange: dateRange)
+        }
     }
     
-    func accessToken(email: String, password: String, dateRange: DateRange) {
-        let loginUrl = URL(string: "https://api2.hoursforteams.com/index.php/api/users/login")!
-        var request = URLRequest(url: loginUrl)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = LoginRequest(email: email, password: password)
-            .toJsonString().data(using: .utf8, allowLossyConversion: false)
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                self.outputToPanel(message: error?.localizedDescription ?? "No data")
-                return
-            }
-            
-            let result = LoginResponse.fromJsonData(data: data)
-            if (result.status == "ok") {
-                self.getTimersPerDay(token: result.result.token, dateRange: dateRange)
-            } else {
-                self.outputToPanel(message: result.error_message)
-            }
-            
-        }
-        task.resume()
+    func needLogin() -> Bool {
+        return !AppDelegate.hasToken()
     }
     
     func epochToTime(epoch: Int) -> String {

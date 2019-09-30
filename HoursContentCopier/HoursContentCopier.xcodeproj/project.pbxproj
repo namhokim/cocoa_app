@@ -26,6 +26,7 @@
 		3ADB2166233A5CD800596320 /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB2165233A5CD800596320 /* DateRange.swift */; };
 		3ADB2168233A5DC900596320 /* DateRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB2167233A5DC900596320 /* DateRangeTests.swift */; };
 		3ADB2169233A5DCE00596320 /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB2165233A5CD800596320 /* DateRange.swift */; };
+		3ADD20E52341C8C600BDEEF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADD20E42341C8C600BDEEF7 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3ADB2164233A596600596320 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		3ADB2165233A5CD800596320 /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
 		3ADB2167233A5DC900596320 /* DateRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeTests.swift; sourceTree = "<group>"; };
+		3ADD20E42341C8C600BDEEF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				3AA16E53233A02E300D25BFB /* AppDelegate.swift */,
 				3AA16E55233A02E300D25BFB /* ViewController.swift */,
+				3ADD20E42341C8C600BDEEF7 /* LoginViewController.swift */,
 				3AA16E57233A02E500D25BFB /* Assets.xcassets */,
 				3AA16E59233A02E500D25BFB /* Main.storyboard */,
 				3AA16E5C233A02E500D25BFB /* Info.plist */,
@@ -255,6 +258,7 @@
 				3AA16E54233A02E300D25BFB /* AppDelegate.swift in Sources */,
 				3ADB215B233A429E00596320 /* LoginResponse.swift in Sources */,
 				3A8D4A27233A6D7F00B21E69 /* TimersResponse.swift in Sources */,
+				3ADD20E52341C8C600BDEEF7 /* LoginViewController.swift in Sources */,
 				3A96D8FB233A1035004F442A /* LoginRequest.swift in Sources */,
 				3ADB2160233A531A00596320 /* LogoutResponse.swift in Sources */,
 				3ADB2166233A5CD800596320 /* DateRange.swift in Sources */,
