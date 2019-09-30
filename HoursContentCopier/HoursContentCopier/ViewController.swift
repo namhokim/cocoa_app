@@ -105,6 +105,8 @@ class ViewController: NSViewController, LoginViewControllerDelegate {
                     message += line
                 }
                 self.outputToPanel(message: message)
+            } else if (result.error_code == 401) {
+                self.loginSeque(message: result.error_message)
             } else {
                 self.outputToPanel(message: String(data: data, encoding: .utf8)!)
             }
@@ -139,6 +141,14 @@ class ViewController: NSViewController, LoginViewControllerDelegate {
     func outputToPanel(message: String) {
         DispatchQueue.main.async {
             self.outputPanel.stringValue = message
+        }
+    }
+    
+    func loginSeque(message: String) {
+        DispatchQueue.main.async {
+            AppDelegate.setToken(token: "")
+            self.outputPanel.stringValue = message
+            self.performSegue(withIdentifier: Constants.loginSeque, sender: self)
         }
     }
     
