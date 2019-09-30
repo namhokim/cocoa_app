@@ -20,6 +20,14 @@ class ViewController: NSViewController {
         datePicker.locale = Locale(identifier: Locale.current.identifier)
         datePicker.dateValue = Date()
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        let beforeTitle = self.view.window?.title
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        self.view.window?.title = "\(beforeTitle!) (v\(appVersion!))"
+    }
 
     override var representedObject: Any? {
         didSet {
