@@ -8,11 +8,12 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+struct Constants {
+    static let loginSeque = "loginSeque"
+}
 
-    @IBOutlet weak var outputPanel: NSTextField!
-    @IBOutlet weak var datePicker: NSDatePicker!
-    
+class ViewController: NSViewController, LoginViewControllerDelegate {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,12 +35,28 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.loginSeque {
+            let loginViewController = segue.destinationController as! LoginViewController
+            loginViewController.delegate = self
+        }
+    }
+    
+    func tokenReceived(data: String) {
+        AppDelegate.setToken(token: data)
+        let dateRange = DateRange(targetDate: datePicker.dateValue)
+        getTimersPerDay(token: data, dateRange: dateRange)
+    }
+    
+    @IBOutlet weak var outputPanel: NSTextField!
+    @IBOutlet weak var datePicker: NSDatePicker!
 
     @IBAction func getContentClicked(_ sender: Any) {
-        let dateRange = DateRange(targetDate: datePicker.dateValue)
         if (needLogin()) {
-            self.performSegue(withIdentifier: "loginSeque", sender: self)
+            self.performSegue(withIdentifier: Constants.loginSeque, sender: self)
         } else {
+            let dateRange = DateRange(targetDate: datePicker.dateValue)
             getTimersPerDay(token: AppDelegate.getToken(), dateRange: dateRange)
         }
     }

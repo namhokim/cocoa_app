@@ -8,7 +8,13 @@
 
 import Cocoa
 
+protocol LoginViewControllerDelegate {
+    func tokenReceived(data: String)
+}
+
 class LoginViewController: NSViewController {
+    var delegate: LoginViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -53,8 +59,8 @@ class LoginViewController: NSViewController {
             
             let result = LoginResponse.fromJsonData(data: data)
             if (result.status == "ok") {
-                AppDelegate.setToken(token: result.result.token)
-                self.closeSelf()
+                //AppDelegate.setToken(token: result.result.token)
+                self.closeSelfWith(token: result.result.token)
             } else {
                 self.outputToPanel(message: result.error_message)
             }
@@ -71,6 +77,13 @@ class LoginViewController: NSViewController {
     
     func closeSelf() {
         DispatchQueue.main.async {
+            self.dismiss(self)
+        }
+    }
+    
+    func closeSelfWith(token: String) {
+        DispatchQueue.main.async {
+            self.delegate?.tokenReceived(data: token)
             self.dismiss(self)
         }
     }
