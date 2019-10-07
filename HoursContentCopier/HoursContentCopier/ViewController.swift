@@ -149,7 +149,7 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
         DispatchQueue.main.async {
             if (!self.postProcCmds.stringValue.isEmpty) {
                 let pp = PipeProcessing(delegate: self)
-                self.outputPanel.stringValue = pp.processPipe(content: message, command: self.postProcCmds.stringValue)
+                pp.processPipe(content: message, command: self.postProcCmds.stringValue)
             } else {
                 self.outputPanel.stringValue = message
             }
