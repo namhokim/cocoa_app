@@ -59,7 +59,6 @@ class LoginViewController: NSViewController {
             
             let result = LoginResponse.fromJsonData(data: data)
             if (result.status == "ok") {
-                //AppDelegate.setToken(token: result.result.token)
                 self.closeSelfWith(token: result.result.token)
             } else {
                 self.outputToPanel(message: result.error_message)

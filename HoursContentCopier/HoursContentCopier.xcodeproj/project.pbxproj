@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A7A615A234B14350026ECB4 /* PipeProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A6159234B14350026ECB4 /* PipeProcessing.swift */; };
+		3A7A615C234B14B10026ECB4 /* PipeProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */; };
+		3A7A615D234B14E80026ECB4 /* PipeProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A6159234B14350026ECB4 /* PipeProcessing.swift */; };
 		3A8D4A27233A6D7F00B21E69 /* TimersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */; };
 		3A8D4A29233A767F00B21E69 /* TimersResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D4A28233A767F00B21E69 /* TimersResponseTests.swift */; };
 		3A8D4A2A233A768500B21E69 /* TimersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */; };
@@ -40,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A7A6159234B14350026ECB4 /* PipeProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeProcessing.swift; sourceTree = "<group>"; };
+		3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeProcessingTests.swift; sourceTree = "<group>"; };
 		3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersResponse.swift; sourceTree = "<group>"; };
 		3A8D4A28233A767F00B21E69 /* TimersResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersResponseTests.swift; sourceTree = "<group>"; };
 		3A96D8FA233A1035004F442A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -90,6 +95,7 @@
 				3ADB2161233A537600596320 /* LogoutResponseTests.swift */,
 				3ADB2167233A5DC900596320 /* DateRangeTests.swift */,
 				3A8D4A28233A767F00B21E69 /* TimersResponseTests.swift */,
+				3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */,
 			);
 			path = HoursContentCopierTests;
 			sourceTree = "<group>";
@@ -127,6 +133,7 @@
 				3ADB215F233A531A00596320 /* LogoutResponse.swift */,
 				3ADB2165233A5CD800596320 /* DateRange.swift */,
 				3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */,
+				3A7A6159234B14350026ECB4 /* PipeProcessing.swift */,
 			);
 			path = HoursContentCopier;
 			sourceTree = "<group>";
@@ -239,9 +246,11 @@
 			files = (
 				3A8D4A2A233A768500B21E69 /* TimersResponse.swift in Sources */,
 				3A96D90C233A258C004F442A /* LoginRequest.swift in Sources */,
+				3A7A615D234B14E80026ECB4 /* PipeProcessing.swift in Sources */,
 				3ADB2162233A537600596320 /* LogoutResponseTests.swift in Sources */,
 				3ADB215D233A42B700596320 /* LoginResponseTests.swift in Sources */,
 				3ADB2163233A53FA00596320 /* LogoutResponse.swift in Sources */,
+				3A7A615C234B14B10026ECB4 /* PipeProcessingTests.swift in Sources */,
 				3ADB2169233A5DCE00596320 /* DateRange.swift in Sources */,
 				3A8D4A29233A767F00B21E69 /* TimersResponseTests.swift in Sources */,
 				3ADB2168233A5DC900596320 /* DateRangeTests.swift in Sources */,
@@ -262,6 +271,7 @@
 				3A96D8FB233A1035004F442A /* LoginRequest.swift in Sources */,
 				3ADB2160233A531A00596320 /* LogoutResponse.swift in Sources */,
 				3ADB2166233A5CD800596320 /* DateRange.swift in Sources */,
+				3A7A615A234B14350026ECB4 /* PipeProcessing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.namhokim.HoursContentCopier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -476,7 +486,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.namhokim.HoursContentCopier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
