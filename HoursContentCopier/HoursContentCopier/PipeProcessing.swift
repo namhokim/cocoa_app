@@ -29,44 +29,28 @@ class PipeProcessing {
             let task = Process()
             task.launchPath = "/bin/sh"
             task.arguments = ["-c", "cat \(path.path) | \(command.utf8)"]
-
-            let pipe = Pipe()
-            task.standardOutput = pipe
-            let outHandle = pipe.fileHandleForReading
-            outHandle.waitForDataInBackgroundAndNotify()
-
-            var processedContent = ""
-            var obs1 : NSObjectProtocol!
-            obs1 = NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable,
-               object: outHandle, queue: nil) {  notification -> Void in
-                let data = outHandle.availableData
-                if data.count > 0 {
-                    if let str = String(data: data, encoding: .utf8) {
-                        processedContent += str
-                    }
-                    outHandle.waitForDataInBackgroundAndNotify()
-                } else {
-                    //print("EOF on stdout from process")
-                    defer {
-                        do {
-                            try FileManager.default.removeItem(at: path)
-                        } catch let error as NSError {
-                            print("Fail to remove temporary file: \(error)")
-                        }
-                    }
-                    NotificationCenter.default.removeObserver(obs1)
+            task.standardOutput = Pipe()
+            task.terminationHandler = { task in
+                guard task.terminationStatus == 0
+                else {
+                    NSLog("The process fail to operate.")
+                    return
+                }
+                
+                guard let data = (task.standardOutput as? Pipe)?.fileHandleForReading.availableData,
+                data.count > 0,
+                let s = String(data: data, encoding: .utf8)
+                else { return }
+                self.delegate?.processingCompleted(data: s)
+                do {
+                    try FileManager.default.removeItem(at: path)
+                } catch let error as NSError {
+                    NSLog("Fail to remove temporary file: \(error)")
                 }
             }
-
-            var obs2 : NSObjectProtocol!
-            obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification,
-                       object: task, queue: nil) { notification -> Void in
-                        self.delegate?.processingCompleted(data: processedContent)
-                        NotificationCenter.default.removeObserver(obs2)
-                }
             task.launch()
         } catch let error as NSError {
-            self.delegate?.processingCompleted(data: "Error Writing File : \(error.localizedDescription)")
+            self.delegate?.processingCompleted(data: "Error with: \(error.localizedDescription)")
         }
         
         return command
