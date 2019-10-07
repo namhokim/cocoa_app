@@ -12,7 +12,7 @@ struct Constants {
     static let loginSeque = "loginSeque"
 }
 
-class ViewController: NSViewController, LoginViewControllerDelegate {
+class ViewController: NSViewController, LoginViewControllerDelegate, CompletePostProcessingDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +49,16 @@ class ViewController: NSViewController, LoginViewControllerDelegate {
         getTimersPerDay(token: data, dateRange: dateRange)
     }
     
+    func processingCompleted(data: String) {
+        DispatchQueue.main.async {
+            self.outputPanel.stringValue = data
+        }
+    }
+    
     @IBOutlet weak var outputPanel: NSTextField!
     @IBOutlet weak var datePicker: NSDatePicker!
-
+    @IBOutlet weak var postProcCmds: NSTextField!
+    
     @IBAction func getContentClicked(_ sender: Any) {
         if (needLogin()) {
             self.performSegue(withIdentifier: Constants.loginSeque, sender: self)
@@ -140,7 +147,12 @@ class ViewController: NSViewController, LoginViewControllerDelegate {
     
     func outputToPanel(message: String) {
         DispatchQueue.main.async {
-            self.outputPanel.stringValue = message
+            if (!self.postProcCmds.stringValue.isEmpty) {
+                let pp = PipeProcessing(delegate: self)
+                self.outputPanel.stringValue = pp.processPipe(content: message, command: self.postProcCmds.stringValue)
+            } else {
+                self.outputPanel.stringValue = message
+            }
         }
     }
     
