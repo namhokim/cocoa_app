@@ -13,21 +13,23 @@ struct Constants {
 }
 
 class ViewController: NSViewController, LoginViewControllerDelegate, CompletePostProcessingDelegate {
-
+    var titleWithVersion: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         datePicker.locale = Locale(identifier: Locale.current.identifier)
         datePicker.dateValue = Date()
+        
+        let productName = Bundle.main.infoDictionary?["CFBundleName"] as? String
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        self.titleWithVersion = "\(productName!) (v\(appVersion!))"
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        
-        let beforeTitle = self.view.window?.title
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        self.view.window?.title = "\(beforeTitle!) (v\(appVersion!))"
+        self.view.window?.title = self.titleWithVersion!
     }
 
     override var representedObject: Any? {
