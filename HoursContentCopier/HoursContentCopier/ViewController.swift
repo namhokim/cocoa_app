@@ -61,6 +61,10 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
     @IBOutlet weak var datePicker: NSDatePicker!
     @IBOutlet weak var postProcCmds: NSTextField!
     
+    @IBAction func setToday(_ sender: Any) {
+        datePicker.dateValue = Date()
+    }
+    
     @IBAction func getContentClicked(_ sender: Any) {
         if (needLogin()) {
             self.performSegue(withIdentifier: Constants.loginSeque, sender: self)
