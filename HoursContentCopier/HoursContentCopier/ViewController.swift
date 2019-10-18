@@ -14,6 +14,22 @@ struct Constants {
 
 class ViewController: NSViewController, LoginViewControllerDelegate, CompletePostProcessingDelegate {
     var titleWithVersion: String?
+    @IBOutlet weak var outputPanel: NSTextField!
+    @IBOutlet weak var datePicker: NSDatePicker!
+    @IBOutlet weak var postProcCmds: NSTextField!
+    
+    @IBAction func setToday(_ sender: Any) {
+        datePicker.dateValue = Date()
+    }
+    
+    @IBAction func getContentClicked(_ sender: Any) {
+        if (needLogin()) {
+            self.performSegue(withIdentifier: Constants.loginSeque, sender: self)
+        } else {
+            let dateRange = DateRange(targetDate: datePicker.dateValue)
+            getTimersPerDay(token: AppDelegate.getToken(), dateRange: dateRange)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,19 +70,6 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
     func processingCompleted(data: String) {
         DispatchQueue.main.async {
             self.outputPanel.stringValue = data
-        }
-    }
-    
-    @IBOutlet weak var outputPanel: NSTextField!
-    @IBOutlet weak var datePicker: NSDatePicker!
-    @IBOutlet weak var postProcCmds: NSTextField!
-    
-    @IBAction func getContentClicked(_ sender: Any) {
-        if (needLogin()) {
-            self.performSegue(withIdentifier: Constants.loginSeque, sender: self)
-        } else {
-            let dateRange = DateRange(targetDate: datePicker.dateValue)
-            getTimersPerDay(token: AppDelegate.getToken(), dateRange: dateRange)
         }
     }
     
