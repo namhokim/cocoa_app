@@ -13,10 +13,26 @@ protocol LoginViewControllerDelegate {
 }
 
 class LoginViewController: NSViewController {
+    static let serviceName = "HoursContentCopier"
+    static let keychainId = "account"
+
     var delegate: LoginViewControllerDelegate?
+    var emailKeychain: String?
+    var passwordKeychain: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            emailKeychain = try self.loadFromKeychain(email: LoginViewController.keychainId)
+            if (!emailKeychain!.isEmpty) {
+                emailField.stringValue = emailKeychain!
+                passwordKeychain = try self.loadFromKeychain(email: emailKeychain!)
+                passwordField.stringValue = passwordKeychain!
+            }
+        } catch {
+            // nothing
+        }
     }
     
     @IBOutlet weak var emailField: NSTextField!
@@ -59,6 +75,18 @@ class LoginViewController: NSViewController {
             
             let result = LoginResponse.fromJsonData(data: data)
             if (result.status == "ok") {
+                do {
+                    if (self.emailKeychain == nil || self.emailKeychain! != email) {
+                        try self.saveToKeychain(key: LoginViewController.keychainId, value: email)
+                        self.emailKeychain = email
+                    }
+                    if (self.passwordKeychain == nil || self.passwordKeychain! != password) {
+                        try self.saveToKeychain(key: email, value: password)
+                        self.passwordKeychain = password
+                    }
+                } catch {
+                    
+                }
                 self.closeSelfWith(token: result.result.token)
             } else {
                 self.outputToPanel(message: result.error_message)
@@ -66,6 +94,16 @@ class LoginViewController: NSViewController {
             
         }
         task.resume()
+    }
+    
+    private func saveToKeychain(key: String, value: String) throws {
+        let keychain = KeychainPasswordItem(service: LoginViewController.serviceName, account: key)
+        try keychain.savePassword(value)
+    }
+    
+    private func loadFromKeychain(email: String) throws -> String {
+        let keychain = KeychainPasswordItem(service: LoginViewController.serviceName, account: email)
+        return try keychain.readPassword()
     }
     
     func outputToPanel(message: String) {

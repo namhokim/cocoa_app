@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A61F8BF236440740069B2F3 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A61F8BE236440740069B2F3 /* KeychainPasswordItem.swift */; };
 		3A7A615A234B14350026ECB4 /* PipeProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A6159234B14350026ECB4 /* PipeProcessing.swift */; };
 		3A7A615C234B14B10026ECB4 /* PipeProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */; };
 		3A7A615D234B14E80026ECB4 /* PipeProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A6159234B14350026ECB4 /* PipeProcessing.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A61F8BE236440740069B2F3 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		3A7A6159234B14350026ECB4 /* PipeProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeProcessing.swift; sourceTree = "<group>"; };
 		3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeProcessingTests.swift; sourceTree = "<group>"; };
 		3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersResponse.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A61F8BD2364405A0069B2F3 /* GenericKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				3A61F8BE236440740069B2F3 /* KeychainPasswordItem.swift */,
+			);
+			path = GenericKeychain;
+			sourceTree = "<group>";
+		};
 		3A96D901233A2265004F442A /* HoursContentCopierTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		3AA16E52233A02E300D25BFB /* HoursContentCopier */ = {
 			isa = PBXGroup;
 			children = (
+				3A61F8BD2364405A0069B2F3 /* GenericKeychain */,
 				3AA16E53233A02E300D25BFB /* AppDelegate.swift */,
 				3AA16E55233A02E300D25BFB /* ViewController.swift */,
 				3ADD20E42341C8C600BDEEF7 /* LoginViewController.swift */,
@@ -268,6 +279,7 @@
 				3ADB215B233A429E00596320 /* LoginResponse.swift in Sources */,
 				3A8D4A27233A6D7F00B21E69 /* TimersResponse.swift in Sources */,
 				3ADD20E52341C8C600BDEEF7 /* LoginViewController.swift in Sources */,
+				3A61F8BF236440740069B2F3 /* KeychainPasswordItem.swift in Sources */,
 				3A96D8FB233A1035004F442A /* LoginRequest.swift in Sources */,
 				3ADB2160233A531A00596320 /* LogoutResponse.swift in Sources */,
 				3ADB2166233A5CD800596320 /* DateRange.swift in Sources */,
@@ -466,7 +478,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.namhokim.HoursContentCopier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -486,7 +498,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.namhokim.HoursContentCopier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
