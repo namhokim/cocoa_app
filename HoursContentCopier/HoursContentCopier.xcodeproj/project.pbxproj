@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3A29953C237FFD17000D68F3 /* PostProcessingHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29953B237FFD17000D68F3 /* PostProcessingHistoryManager.swift */; };
 		3A29953D237FFD17000D68F3 /* PostProcessingHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29953B237FFD17000D68F3 /* PostProcessingHistoryManager.swift */; };
+		3A29954223801242000D68F3 /* PostProcessingHistoryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29954123801242000D68F3 /* PostProcessingHistoryItems.swift */; };
+		3A29954323801242000D68F3 /* PostProcessingHistoryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29954123801242000D68F3 /* PostProcessingHistoryItems.swift */; };
+		3A29954523801288000D68F3 /* PostProcessingHistoryItemsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29954423801288000D68F3 /* PostProcessingHistoryItemsTests.swift */; };
 		3A61F8BF236440740069B2F3 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A61F8BE236440740069B2F3 /* KeychainPasswordItem.swift */; };
 		3A7A615A234B14350026ECB4 /* PipeProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A6159234B14350026ECB4 /* PipeProcessing.swift */; };
 		3A7A615C234B14B10026ECB4 /* PipeProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */; };
@@ -47,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		3A29953B237FFD17000D68F3 /* PostProcessingHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProcessingHistoryManager.swift; sourceTree = "<group>"; };
+		3A29954123801242000D68F3 /* PostProcessingHistoryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProcessingHistoryItems.swift; sourceTree = "<group>"; };
+		3A29954423801288000D68F3 /* PostProcessingHistoryItemsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProcessingHistoryItemsTests.swift; sourceTree = "<group>"; };
 		3A61F8BE236440740069B2F3 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		3A7A6159234B14350026ECB4 /* PipeProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeProcessing.swift; sourceTree = "<group>"; };
 		3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeProcessingTests.swift; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 			children = (
 				3A7A6159234B14350026ECB4 /* PipeProcessing.swift */,
 				3A29953B237FFD17000D68F3 /* PostProcessingHistoryManager.swift */,
+				3A29954123801242000D68F3 /* PostProcessingHistoryItems.swift */,
 			);
 			path = PostProcessing;
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */,
+				3A29954423801288000D68F3 /* PostProcessingHistoryItemsTests.swift */,
 			);
 			path = PostProcessing;
 			sourceTree = "<group>";
@@ -297,7 +304,9 @@
 				3A29953D237FFD17000D68F3 /* PostProcessingHistoryManager.swift in Sources */,
 				3ADB2162233A537600596320 /* LogoutResponseTests.swift in Sources */,
 				3ADB215D233A42B700596320 /* LoginResponseTests.swift in Sources */,
+				3A29954323801242000D68F3 /* PostProcessingHistoryItems.swift in Sources */,
 				3ADB2163233A53FA00596320 /* LogoutResponse.swift in Sources */,
+				3A29954523801288000D68F3 /* PostProcessingHistoryItemsTests.swift in Sources */,
 				3A7A615C234B14B10026ECB4 /* PipeProcessingTests.swift in Sources */,
 				3ADB2169233A5DCE00596320 /* DateRange.swift in Sources */,
 				3A8D4A29233A767F00B21E69 /* TimersResponseTests.swift in Sources */,
@@ -315,6 +324,7 @@
 				3A29953C237FFD17000D68F3 /* PostProcessingHistoryManager.swift in Sources */,
 				3AA16E54233A02E300D25BFB /* AppDelegate.swift in Sources */,
 				3ADB215B233A429E00596320 /* LoginResponse.swift in Sources */,
+				3A29954223801242000D68F3 /* PostProcessingHistoryItems.swift in Sources */,
 				3A8D4A27233A6D7F00B21E69 /* TimersResponse.swift in Sources */,
 				3ADD20E52341C8C600BDEEF7 /* LoginViewController.swift in Sources */,
 				3A61F8BF236440740069B2F3 /* KeychainPasswordItem.swift in Sources */,

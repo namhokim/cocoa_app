@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+struct HistoryItemByUserDefaults {
+    static let KEY = "postCommandHistories"
+    
+    static func load() -> Array<String> {
+        if let data = UserDefaults.standard.object(forKey: KEY) {
+            return data as! Array<String>
+        }
+        return []
+    }
+    
+    static func save(data: Array<String>) {
+        UserDefaults.standard.set(data, forKey: KEY)
+    }
+}
