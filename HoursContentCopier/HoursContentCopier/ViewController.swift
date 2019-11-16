@@ -16,7 +16,7 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
     var titleWithVersion: String?
     @IBOutlet weak var outputPanel: NSTextField!
     @IBOutlet weak var datePicker: NSDatePicker!
-    @IBOutlet weak var postProcCmds: NSTextField!
+    @IBOutlet weak var postProcessingCmds: NSComboBox!
     
     @IBAction func setToday(_ sender: Any) {
         datePicker.dateValue = Date()
@@ -152,9 +152,9 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
     
     func outputToPanel(message: String) {
         DispatchQueue.main.async {
-            if (!self.postProcCmds.stringValue.isEmpty) {
+            if (!self.postProcessingCmds.stringValue.isEmpty) {
                 let pp = PipeProcessing(delegate: self)
-                pp.processPipe(content: message, command: self.postProcCmds.stringValue)
+                pp.processPipe(content: message, command: self.postProcessingCmds.stringValue)
             } else {
                 self.outputPanel.stringValue = message
             }
