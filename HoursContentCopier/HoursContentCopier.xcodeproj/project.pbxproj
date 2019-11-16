@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A29953C237FFD17000D68F3 /* PostProcessingHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29953B237FFD17000D68F3 /* PostProcessingHistoryManager.swift */; };
+		3A29953D237FFD17000D68F3 /* PostProcessingHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29953B237FFD17000D68F3 /* PostProcessingHistoryManager.swift */; };
+		3A29954223801242000D68F3 /* PostProcessingHistoryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29954123801242000D68F3 /* PostProcessingHistoryItems.swift */; };
+		3A29954323801242000D68F3 /* PostProcessingHistoryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29954123801242000D68F3 /* PostProcessingHistoryItems.swift */; };
+		3A29954523801288000D68F3 /* PostProcessingHistoryItemsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29954423801288000D68F3 /* PostProcessingHistoryItemsTests.swift */; };
 		3A61F8BF236440740069B2F3 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A61F8BE236440740069B2F3 /* KeychainPasswordItem.swift */; };
 		3A7A615A234B14350026ECB4 /* PipeProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A6159234B14350026ECB4 /* PipeProcessing.swift */; };
 		3A7A615C234B14B10026ECB4 /* PipeProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */; };
@@ -44,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A29953B237FFD17000D68F3 /* PostProcessingHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProcessingHistoryManager.swift; sourceTree = "<group>"; };
+		3A29954123801242000D68F3 /* PostProcessingHistoryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProcessingHistoryItems.swift; sourceTree = "<group>"; };
+		3A29954423801288000D68F3 /* PostProcessingHistoryItemsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProcessingHistoryItemsTests.swift; sourceTree = "<group>"; };
 		3A61F8BE236440740069B2F3 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		3A7A6159234B14350026ECB4 /* PipeProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeProcessing.swift; sourceTree = "<group>"; };
 		3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeProcessingTests.swift; sourceTree = "<group>"; };
@@ -63,7 +71,7 @@
 		3ADB215A233A429E00596320 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		3ADB215C233A42B700596320 /* LoginResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseTests.swift; sourceTree = "<group>"; };
 		3ADB215F233A531A00596320 /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
-		3ADB2161233A537600596320 /* LogoutResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoutResponseTests.swift; path = HoursContentCopierTests/LogoutResponseTests.swift; sourceTree = SOURCE_ROOT; };
+		3ADB2161233A537600596320 /* LogoutResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoutResponseTests.swift; path = HoursContentCopierTests/ExternalApi/LogoutResponseTests.swift; sourceTree = SOURCE_ROOT; };
 		3ADB2164233A596600596320 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		3ADB2165233A5CD800596320 /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
 		3ADB2167233A5DC900596320 /* DateRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeTests.swift; sourceTree = "<group>"; };
@@ -88,6 +96,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A299537237FFCE8000D68F3 /* PostProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A6159234B14350026ECB4 /* PipeProcessing.swift */,
+				3A29953B237FFD17000D68F3 /* PostProcessingHistoryManager.swift */,
+				3A29954123801242000D68F3 /* PostProcessingHistoryItems.swift */,
+			);
+			path = PostProcessing;
+			sourceTree = "<group>";
+		};
+		3A29953E237FFD37000D68F3 /* ExternalApi */ = {
+			isa = PBXGroup;
+			children = (
+				3ADB2165233A5CD800596320 /* DateRange.swift */,
+				3A96D8FA233A1035004F442A /* LoginRequest.swift */,
+				3ADB215A233A429E00596320 /* LoginResponse.swift */,
+				3ADB215F233A531A00596320 /* LogoutResponse.swift */,
+				3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */,
+			);
+			path = ExternalApi;
+			sourceTree = "<group>";
+		};
+		3A29953F237FFD95000D68F3 /* ExternalApi */ = {
+			isa = PBXGroup;
+			children = (
+				3ADB2167233A5DC900596320 /* DateRangeTests.swift */,
+				3A96D90A233A23EB004F442A /* LoginRequestTests.swift */,
+				3ADB215C233A42B700596320 /* LoginResponseTests.swift */,
+				3ADB2161233A537600596320 /* LogoutResponseTests.swift */,
+				3A8D4A28233A767F00B21E69 /* TimersResponseTests.swift */,
+			);
+			path = ExternalApi;
+			sourceTree = "<group>";
+		};
+		3A299540237FFDB4000D68F3 /* PostProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */,
+				3A29954423801288000D68F3 /* PostProcessingHistoryItemsTests.swift */,
+			);
+			path = PostProcessing;
+			sourceTree = "<group>";
+		};
 		3A61F8BD2364405A0069B2F3 /* GenericKeychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +150,9 @@
 		3A96D901233A2265004F442A /* HoursContentCopierTests */ = {
 			isa = PBXGroup;
 			children = (
+				3A29953F237FFD95000D68F3 /* ExternalApi */,
+				3A299540237FFDB4000D68F3 /* PostProcessing */,
 				3A96D904233A2265004F442A /* Info.plist */,
-				3A96D90A233A23EB004F442A /* LoginRequestTests.swift */,
-				3ADB215C233A42B700596320 /* LoginResponseTests.swift */,
-				3ADB2161233A537600596320 /* LogoutResponseTests.swift */,
-				3ADB2167233A5DC900596320 /* DateRangeTests.swift */,
-				3A8D4A28233A767F00B21E69 /* TimersResponseTests.swift */,
-				3A7A615B234B14B10026ECB4 /* PipeProcessingTests.swift */,
 			);
 			path = HoursContentCopierTests;
 			sourceTree = "<group>";
@@ -131,6 +178,8 @@
 		3AA16E52233A02E300D25BFB /* HoursContentCopier */ = {
 			isa = PBXGroup;
 			children = (
+				3A29953E237FFD37000D68F3 /* ExternalApi */,
+				3A299537237FFCE8000D68F3 /* PostProcessing */,
 				3A61F8BD2364405A0069B2F3 /* GenericKeychain */,
 				3AA16E53233A02E300D25BFB /* AppDelegate.swift */,
 				3AA16E55233A02E300D25BFB /* ViewController.swift */,
@@ -139,12 +188,6 @@
 				3AA16E59233A02E500D25BFB /* Main.storyboard */,
 				3AA16E5C233A02E500D25BFB /* Info.plist */,
 				3AA16E5D233A02E500D25BFB /* HoursContentCopier.entitlements */,
-				3A96D8FA233A1035004F442A /* LoginRequest.swift */,
-				3ADB215A233A429E00596320 /* LoginResponse.swift */,
-				3ADB215F233A531A00596320 /* LogoutResponse.swift */,
-				3ADB2165233A5CD800596320 /* DateRange.swift */,
-				3A8D4A26233A6D7F00B21E69 /* TimersResponse.swift */,
-				3A7A6159234B14350026ECB4 /* PipeProcessing.swift */,
 			);
 			path = HoursContentCopier;
 			sourceTree = "<group>";
@@ -258,9 +301,12 @@
 				3A8D4A2A233A768500B21E69 /* TimersResponse.swift in Sources */,
 				3A96D90C233A258C004F442A /* LoginRequest.swift in Sources */,
 				3A7A615D234B14E80026ECB4 /* PipeProcessing.swift in Sources */,
+				3A29953D237FFD17000D68F3 /* PostProcessingHistoryManager.swift in Sources */,
 				3ADB2162233A537600596320 /* LogoutResponseTests.swift in Sources */,
 				3ADB215D233A42B700596320 /* LoginResponseTests.swift in Sources */,
+				3A29954323801242000D68F3 /* PostProcessingHistoryItems.swift in Sources */,
 				3ADB2163233A53FA00596320 /* LogoutResponse.swift in Sources */,
+				3A29954523801288000D68F3 /* PostProcessingHistoryItemsTests.swift in Sources */,
 				3A7A615C234B14B10026ECB4 /* PipeProcessingTests.swift in Sources */,
 				3ADB2169233A5DCE00596320 /* DateRange.swift in Sources */,
 				3A8D4A29233A767F00B21E69 /* TimersResponseTests.swift in Sources */,
@@ -275,8 +321,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA16E56233A02E300D25BFB /* ViewController.swift in Sources */,
+				3A29953C237FFD17000D68F3 /* PostProcessingHistoryManager.swift in Sources */,
 				3AA16E54233A02E300D25BFB /* AppDelegate.swift in Sources */,
 				3ADB215B233A429E00596320 /* LoginResponse.swift in Sources */,
+				3A29954223801242000D68F3 /* PostProcessingHistoryItems.swift in Sources */,
 				3A8D4A27233A6D7F00B21E69 /* TimersResponse.swift in Sources */,
 				3ADD20E52341C8C600BDEEF7 /* LoginViewController.swift in Sources */,
 				3A61F8BF236440740069B2F3 /* KeychainPasswordItem.swift in Sources */,
@@ -478,7 +526,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.namhokim.HoursContentCopier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -498,7 +546,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.namhokim.HoursContentCopier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

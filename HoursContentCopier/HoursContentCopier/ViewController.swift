@@ -14,15 +14,18 @@ struct Constants {
 
 class ViewController: NSViewController, LoginViewControllerDelegate, CompletePostProcessingDelegate {
     var titleWithVersion: String?
+    var postProcHistoryItems: PostProcessingHistoryItems?
+    
     @IBOutlet weak var outputPanel: NSTextField!
     @IBOutlet weak var datePicker: NSDatePicker!
-    @IBOutlet weak var postProcCmds: NSTextField!
+    @IBOutlet weak var postProcessingCmds: NSComboBox!
     
     @IBAction func setToday(_ sender: Any) {
         datePicker.dateValue = Date()
     }
     
     @IBAction func getContentClicked(_ sender: Any) {
+        updatePostProcessingCommands()
         if (needLogin()) {
             self.performSegue(withIdentifier: Constants.loginSeque, sender: self)
         } else {
@@ -41,6 +44,12 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
         let productName = Bundle.main.infoDictionary?["CFBundleName"] as? String
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         self.titleWithVersion = "\(productName!) (v\(appVersion!))"
+        
+        postProcHistoryItems = PostProcessingHistoryItems()
+        postProcHistoryItems!.initData(initItems: HistoryItemByUserDefaults.load())
+        postProcessingCmds.usesDataSource = true
+        postProcessingCmds.dataSource = postProcHistoryItems
+        postProcessingCmds.completes = true
     }
     
     override func viewDidAppear() {
@@ -58,6 +67,17 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
         if segue.identifier == Constants.loginSeque {
             let loginViewController = segue.destinationController as! LoginViewController
             loginViewController.delegate = self
+        }
+    }
+    
+    func updatePostProcessingCommands() {
+        if (postProcessingCmds.stringValue.isEmpty) {
+            return
+        }
+        
+        if let items = postProcHistoryItems {
+            items.add(command: postProcessingCmds.stringValue)
+            HistoryItemByUserDefaults.save(data: postProcHistoryItems!.getData())
         }
     }
     
@@ -152,9 +172,9 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
     
     func outputToPanel(message: String) {
         DispatchQueue.main.async {
-            if (!self.postProcCmds.stringValue.isEmpty) {
+            if (!self.postProcessingCmds.stringValue.isEmpty) {
                 let pp = PipeProcessing(delegate: self)
-                pp.processPipe(content: message, command: self.postProcCmds.stringValue)
+                pp.processPipe(content: message, command: self.postProcessingCmds.stringValue)
             } else {
                 self.outputPanel.stringValue = message
             }

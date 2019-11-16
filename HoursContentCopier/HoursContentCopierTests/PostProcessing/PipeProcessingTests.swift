@@ -7,10 +7,15 @@
 //
 import XCTest
 
-class PipeProcessingTests: XCTestCase {
+class PipeProcessingTests: XCTestCase, CompletePostProcessingDelegate {
+    
+    func processingCompleted(data: String) {
+        // do nothing
+    }
+    
     func testRandomFilename() {
         // given
-        let proc = PipeProcessing()
+        let proc = PipeProcessing(delegate: self)
         
         // when
         let filename = proc.filename
