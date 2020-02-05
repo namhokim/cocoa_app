@@ -13,6 +13,7 @@ struct Constants {
 }
 
 class ViewController: NSViewController, LoginViewControllerDelegate, CompletePostProcessingDelegate {
+
     var titleWithVersion: String?
     var postProcHistoryItems: PostProcessingHistoryItems?
     
@@ -20,8 +21,16 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
     @IBOutlet weak var datePicker: NSDatePicker!
     @IBOutlet weak var postProcessingCmds: NSComboBox!
     
+    @IBAction func setPrevDate(_ sender: Any) {
+        datePicker.dateValue = datePicker.dateValue.addingTimeInterval(TimeInterval(-86400))
+    }
+    
     @IBAction func setToday(_ sender: Any) {
         datePicker.dateValue = Date()
+    }
+    
+    @IBAction func setNextDate(_ sender: Any) {
+        datePicker.dateValue = datePicker.dateValue.addingTimeInterval(TimeInterval(86400))
     }
     
     @IBAction func getContentClicked(_ sender: Any) {
