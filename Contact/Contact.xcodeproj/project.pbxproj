@@ -12,6 +12,8 @@
 		3A1E4B4225270B85009BA589 /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E4B4125270B85009BA589 /* AlertDialog.swift */; };
 		3A1E4B48252711C3009BA589 /* SaveDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E4B47252711C3009BA589 /* SaveDialog.swift */; };
 		3A1E4B4D25272352009BA589 /* ScriptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E4B4C25272352009BA589 /* ScriptGenerator.swift */; };
+		3A2EDC4C252755C80016AD73 /* ADragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EDC4B252755C80016AD73 /* ADragDropView.swift */; };
+		3A2EDC50252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EDC4F252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift */; };
 		3A7DEAA82525D3400005EC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DEAA72525D3400005EC60 /* AppDelegate.swift */; };
 		3A7DEAAA2525D3400005EC60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DEAA92525D3400005EC60 /* ViewController.swift */; };
 		3A7DEAAC2525D3410005EC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7DEAAB2525D3410005EC60 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		3A1E4B4125270B85009BA589 /* AlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDialog.swift; sourceTree = "<group>"; };
 		3A1E4B47252711C3009BA589 /* SaveDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDialog.swift; sourceTree = "<group>"; };
 		3A1E4B4C25272352009BA589 /* ScriptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptGenerator.swift; sourceTree = "<group>"; };
+		3A2EDC4B252755C80016AD73 /* ADragDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADragDropView.swift; sourceTree = "<group>"; };
+		3A2EDC4F252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+FilePathURL.swift"; sourceTree = "<group>"; };
 		3A7DEAA42525D3400005EC60 /* Contact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7DEAA72525D3400005EC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A7DEAA92525D3400005EC60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,15 @@
 			path = ScriptGenerator;
 			sourceTree = "<group>";
 		};
+		3A2EDC4A252755850016AD73 /* ADragDropView */ = {
+			isa = PBXGroup;
+			children = (
+				3A2EDC4F252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift */,
+				3A2EDC4B252755C80016AD73 /* ADragDropView.swift */,
+			);
+			path = ADragDropView;
+			sourceTree = "<group>";
+		};
 		3A7DEA9B2525D3400005EC60 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +115,7 @@
 		3A7DEAA62525D3400005EC60 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				3A2EDC4A252755850016AD73 /* ADragDropView */,
 				3A1E4B4B2527233C009BA589 /* ScriptGenerator */,
 				3A1E4B3C25270A09009BA589 /* FileAttribute */,
 				3AA0726F2527041A000537AE /* Dialog */,
@@ -238,8 +252,10 @@
 				3A1E4B3E25270A30009BA589 /* GrantExecutable.swift in Sources */,
 				3A1E4B4225270B85009BA589 /* AlertDialog.swift in Sources */,
 				3A1E4B48252711C3009BA589 /* SaveDialog.swift in Sources */,
+				3A2EDC4C252755C80016AD73 /* ADragDropView.swift in Sources */,
 				3A7DEAA82525D3400005EC60 /* AppDelegate.swift in Sources */,
 				3A1E4B4D25272352009BA589 /* ScriptGenerator.swift in Sources */,
+				3A2EDC50252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
