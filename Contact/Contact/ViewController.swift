@@ -76,39 +76,10 @@ class ViewController: NSViewController {
             guard task.terminationStatus == 0
             else {
                 NSLog("The process fail to operate. \(task.terminationStatus)")
-                self.cleanTmpFile(tmpShFilePath)
                 return
             }
-            
-            self.execShellScript(tmpShFilePath)
         }
         taskChmod.launch()
-    }
-    
-    private func execShellScript(_ tmpShFilePath: URL) {
-        let task = Process()
-        task.launchPath = "/bin/sh"
-        task.arguments = [tmpShFilePath.path]
-        task.standardOutput = Pipe()
-        task.terminationHandler = { task in
-            guard task.terminationStatus == 0
-            else {
-                NSLog("The process fail to operate. \(task.terminationStatus)")
-                self.cleanTmpFile(tmpShFilePath)
-                return
-            }
-            
-            self.cleanTmpFile(tmpShFilePath)
-        }
-        task.launch()
-    }
-    
-    private func cleanTmpFile(_ tmpShFilePath: URL) {
-        do {
-            try FileManager.default.removeItem(at: tmpShFilePath)
-        } catch let error as NSError {
-            NSLog("Fail to remove temporary file: \(error)")
-        }
     }
     
 }
