@@ -27,15 +27,13 @@ class ViewController: NSViewController {
             return
         }
         
-        let filename = SaveDialog().showModal()
-        if (filename == nil) {
-            return
-        }
-        
+        let filename = generateTemporaryFilePath()
         let scriptGen = ScriptGenerator(urls)
-        if (scriptGen.saveToFile(filename!)) {
-            grantExecutable(filename!)
+        if (scriptGen.saveToFile(filename)) {
+            grantExecutable(filename)
+            executeShellScript(filename)
         }
+        deleteFile(filename)
     }
 
 }
