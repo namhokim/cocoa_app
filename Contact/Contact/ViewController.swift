@@ -21,6 +21,21 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func openDialog(_ sender: Any) {
+        let urls = OpenDialog().showModal()
+        if (urls.count <= 0) {
+            return
+        }
+        
+        let filename = SaveDialog().showModal()
+        if (filename == nil) {
+            return
+        }
+        
+        let scriptGen = ScriptGenerator(urls)
+        if (scriptGen.saveToFile(filename!)) {
+            grantExecutable(filename!)
+        }
+    }
 
 }
-

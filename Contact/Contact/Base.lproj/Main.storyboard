@@ -718,13 +718,28 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JqI-WZ-HXQ">
+                                <rect key="frame" x="99" y="60" width="73" height="32"/>
+                                <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f34-c6-Rt2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openDialog:" target="XfG-lQ-9wD" id="mlp-UK-lfc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="JqI-WZ-HXQ" firstAttribute="centerX" secondItem="xwW-sN-35G" secondAttribute="centerX" id="6nq-AN-2p2"/>
                             <constraint firstItem="xwW-sN-35G" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="Ias-az-1sO"/>
+                            <constraint firstItem="JqI-WZ-HXQ" firstAttribute="top" secondItem="xwW-sN-35G" secondAttribute="bottom" constant="32" id="IlP-yt-Sji"/>
                             <constraint firstItem="xwW-sN-35G" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="40" id="UbY-cj-z9H"/>
                             <constraint firstItem="xwW-sN-35G" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="oRZ-N3-vSk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="openButton" destination="JqI-WZ-HXQ" id="2vu-Y2-hEg"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
