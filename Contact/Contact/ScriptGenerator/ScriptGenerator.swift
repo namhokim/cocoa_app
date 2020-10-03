@@ -24,10 +24,16 @@ class ScriptGenerator {
         content.append("#!/bin/bash\n".data(using: .ascii)!)    // shebang
         
         for url in self.urls {
+            let decomp = UrlDecomposition(url)
+            let path = decomp.pathPart.replacingOccurrences(of: "\"", with: "\\\"")
+            let file = decomp.lastPart.replacingOccurrences(of: "\"", with: "\\\"")
+            
             content.append(#"mv -f ""#.data(using: .ascii)!)
-            content.append(url.path.replacingOccurrences(of: "\"", with: "\\\"").data(using: .utf8)!)
+            content.append(path.data(using: .utf8)!)
+            content.append(file.data(using: .utf8)!)
             content.append(#"" ""#.data(using: .ascii)!)
-            content.append(url.path.precomposedStringWithCanonicalMapping.replacingOccurrences(of: "\"", with: "\\\"").data(using: .utf8)!)
+            content.append(path.data(using: .utf8)!)
+            content.append(file.precomposedStringWithCanonicalMapping.data(using: .utf8)!)
             content.append("\"\n".data(using: .ascii)!)
         }
         
