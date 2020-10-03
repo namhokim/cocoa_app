@@ -9,13 +9,29 @@ import Cocoa
 
 class ViewController: NSViewController {
     
+    var titleWithVersion: String?
     @IBOutlet weak var dragDropView: ADragDropView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        applicationTitleByVersion()
+        dragDropSettings()
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.window?.title = self.titleWithVersion!
+    }
+    
+    private func applicationTitleByVersion() {
+        let productName = Bundle.main.infoDictionary?["CFBundleName"] as? String
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        self.titleWithVersion = "\(productName!) (v\(appVersion!))"
+    }
+    
+    private func dragDropSettings() {
         dragDropView.allowAllFileExtensions = true
         dragDropView.delegate = self
     }
