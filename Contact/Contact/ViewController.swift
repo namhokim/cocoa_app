@@ -13,6 +13,7 @@ class ViewController: NSViewController {
     private var trackingArea: NSTrackingArea?
     @IBOutlet weak var dragDropView: ADragDropView!
     @IBOutlet weak var openButton: NSButton!
+    @IBOutlet weak var messageText: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class ViewController: NSViewController {
     
     override func viewDidAppear() {
         super.viewDidAppear()
+        messageText.stringValue = ProcessingStatus.initialMessage
         view.window?.title = self.titleWithVersion!
         openButton.isHidden = true
     }
@@ -62,6 +64,7 @@ class ViewController: NSViewController {
     }
     
     private func processing(_ urls: [URL]) {
+        messageText.stringValue = ProcessingStatus.onProcessingMessage
         let filename = generateTemporaryFilePath()
         let scriptGen = ScriptGenerator(urls)
         if (scriptGen.saveToFile(filename)) {
@@ -69,6 +72,7 @@ class ViewController: NSViewController {
             executeShellScript(filename)
         }
         deleteFile(filename)
+        messageText.stringValue = ProcessingStatus.finishedMessage
     }
 
 }
@@ -91,4 +95,10 @@ extension ViewController: ADragDropViewDelegate {
     func mouseExited(_ dragDropView: ADragDropView, with event: NSEvent) {
         openButton.isHidden = true
     }
+}
+
+struct ProcessingStatus {
+    static let initialMessage = "Drag and drop here!"
+    static let onProcessingMessage = "Processing..."
+    static let finishedMessage = "Done!"
 }

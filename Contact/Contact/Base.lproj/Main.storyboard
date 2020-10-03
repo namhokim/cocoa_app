@@ -149,6 +149,7 @@
                     </view>
                     <connections>
                         <outlet property="dragDropView" destination="y5c-Aw-uTF" id="cB4-kZ-HhO"/>
+                        <outlet property="messageText" destination="xwW-sN-35G" id="O9l-T7-qgq"/>
                         <outlet property="openButton" destination="JqI-WZ-HXQ" id="a5z-GO-ln1"/>
                     </connections>
                 </viewController>
