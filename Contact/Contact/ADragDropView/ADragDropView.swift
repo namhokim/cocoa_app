@@ -104,6 +104,26 @@ public final class ADragDropView: NSView {
         return fileTypeIsOk ? .copy : []
     }
     
+    public override func mouseEntered(with event: NSEvent) {
+        delegate?.mouseEntered(self, with: event)
+    }
+    
+    public override func mouseExited(with event: NSEvent) {
+        delegate?.mouseExited(self, with: event)
+    }
+    
+    public override func updateTrackingAreas() {
+        super.updateTrackingAreas()
+        
+        for trackingArea in self.trackingAreas {
+            self.removeTrackingArea(trackingArea)
+        }
+        
+        let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways]
+        let trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
+        self.addTrackingArea(trackingArea)
+    }
+    
     public override func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
         // finished with dragging so remove any highlighting
         highlight = false
@@ -159,6 +179,8 @@ public final class ADragDropView: NSView {
 public protocol ADragDropViewDelegate: class {
     func dragDropView(_ dragDropView: ADragDropView, droppedFileWithURL  URL: URL)
     func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL])
+    func mouseEntered(_ dragDropView: ADragDropView, with event: NSEvent)
+    func mouseExited(_ dragDropView: ADragDropView, with event: NSEvent)
 }
 
 extension ADragDropViewDelegate {
@@ -166,5 +188,11 @@ extension ADragDropViewDelegate {
     }
     
     func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL]) {
+    }
+    
+    func mouseEntered(_ dragDropView: ADragDropView, with event: NSEvent) {
+    }
+    
+    func mouseExited(_ dragDropView: ADragDropView, with event: NSEvent) {
     }
 }

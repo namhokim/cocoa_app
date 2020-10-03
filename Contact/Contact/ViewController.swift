@@ -9,9 +9,11 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    var titleWithVersion: String?
+    private var titleWithVersion: String?
+    private var trackingArea: NSTrackingArea?
     @IBOutlet weak var dragDropView: ADragDropView!
-
+    @IBOutlet weak var openButton: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,20 +24,10 @@ class ViewController: NSViewController {
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        self.view.window?.title = self.titleWithVersion!
+        view.window?.title = self.titleWithVersion!
+        openButton.isHidden = true
     }
     
-    private func applicationTitleByVersion() {
-        let productName = Bundle.main.infoDictionary?["CFBundleName"] as? String
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        self.titleWithVersion = "\(productName!) (v\(appVersion!))"
-    }
-    
-    private func dragDropSettings() {
-        dragDropView.allowAllFileExtensions = true
-        dragDropView.delegate = self
-    }
-
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
@@ -48,8 +40,20 @@ class ViewController: NSViewController {
             processing(urls)
         }
     }
+
+
+    private func applicationTitleByVersion() {
+        let productName = Bundle.main.infoDictionary?["CFBundleName"] as? String
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        self.titleWithVersion = "\(productName!) (v\(appVersion!))"
+    }
     
-    func processing(_ urls: [URL]) {
+    private func dragDropSettings() {
+        dragDropView.allowAllFileExtensions = true
+        dragDropView.delegate = self
+    }
+    
+    private func processing(_ urls: [URL]) {
         let filename = generateTemporaryFilePath()
         let scriptGen = ScriptGenerator(urls)
         if (scriptGen.saveToFile(filename)) {
@@ -70,5 +74,13 @@ extension ViewController: ADragDropViewDelegate {
     
     func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL]) {
         processing(URLs)
+    }
+    
+    func mouseEntered(_ dragDropView: ADragDropView, with event: NSEvent) {
+        openButton.isHidden = false
+    }
+    
+    func mouseExited(_ dragDropView: ADragDropView, with event: NSEvent) {
+        openButton.isHidden = true
     }
 }

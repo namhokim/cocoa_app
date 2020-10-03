@@ -718,7 +718,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="y5c-Aw-uTF" customClass="ADragDropView" customModule="Contact">
+                            <customView toolTip="Drag and drop files" translatesAutoresizingMaskIntoConstraints="NO" id="y5c-Aw-uTF" customClass="ADragDropView" customModule="Contact">
                                 <rect key="frame" x="0.0" y="40" width="270" height="212"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JqI-WZ-HXQ">
@@ -750,6 +750,7 @@
                     </view>
                     <connections>
                         <outlet property="dragDropView" destination="y5c-Aw-uTF" id="cB4-kZ-HhO"/>
+                        <outlet property="openButton" destination="JqI-WZ-HXQ" id="a5z-GO-ln1"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
