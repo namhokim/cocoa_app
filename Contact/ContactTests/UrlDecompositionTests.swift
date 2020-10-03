@@ -17,7 +17,7 @@ class UrlDecompositionTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testNormal() throws {
         // given
         let url = URL(fileURLWithPath: "/Users/namo/Desktop/tube/babyshow_45.mp4")
         
@@ -27,6 +27,18 @@ class UrlDecompositionTests: XCTestCase {
         // then
         XCTAssert(sut.lastPart == "babyshow_45.mp4", "last part assertion")
         XCTAssert(sut.pathPart == "/Users/namo/Desktop/tube/", "path part assertion")
+    }
+    
+    func testRootPathPart() throws {
+        // given
+        let url = URL(fileURLWithPath: "/babyshow_45.mp4")
+        
+        // when
+        let sut = UrlDecomposition(url)
+        
+        // then
+        XCTAssert(sut.lastPart == "babyshow_45.mp4", "last part assertion")
+        XCTAssert(sut.pathPart == "/", sut.pathPart)
     }
 
 
