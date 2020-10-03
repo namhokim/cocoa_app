@@ -7,7 +7,7 @@ class OpenDialog {
         panel = NSOpenPanel()
         
         panel.canChooseFiles = true
-        panel.canChooseDirectories = false
+        panel.canChooseDirectories = true
         panel.resolvesAliases = false
         panel.allowsMultipleSelection = true
     }

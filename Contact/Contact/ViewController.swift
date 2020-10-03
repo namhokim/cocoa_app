@@ -40,7 +40,15 @@ class ViewController: NSViewController {
             processing(urls)
         }
     }
+    
+    override var acceptsFirstResponder: Bool {
+        return true
+    }
 
+    @IBAction func showHelp(_ sender: Any) {
+        let url = URL(string: "https://namocom.tistory.com/901")!
+        NSWorkspace.shared.open(url)
+    }
 
     private func applicationTitleByVersion() {
         let productName = Bundle.main.infoDictionary?["CFBundleName"] as? String
