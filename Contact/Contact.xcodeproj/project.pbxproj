@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1E4B3925270524009BA589 /* OpenDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E4B3825270524009BA589 /* OpenDialog.swift */; };
+		3A1E4B3E25270A30009BA589 /* GrantExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E4B3D25270A30009BA589 /* GrantExecutable.swift */; };
+		3A1E4B4225270B85009BA589 /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E4B4125270B85009BA589 /* AlertDialog.swift */; };
+		3A1E4B48252711C3009BA589 /* SaveDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E4B47252711C3009BA589 /* SaveDialog.swift */; };
+		3A1E4B4D25272352009BA589 /* ScriptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E4B4C25272352009BA589 /* ScriptGenerator.swift */; };
+		3A2EDC4C252755C80016AD73 /* ADragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EDC4B252755C80016AD73 /* ADragDropView.swift */; };
+		3A2EDC50252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EDC4F252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift */; };
 		3A7DEAA82525D3400005EC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DEAA72525D3400005EC60 /* AppDelegate.swift */; };
 		3A7DEAAA2525D3400005EC60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DEAA92525D3400005EC60 /* ViewController.swift */; };
 		3A7DEAAC2525D3410005EC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7DEAAB2525D3410005EC60 /* Assets.xcassets */; };
 		3A7DEAAF2525D3410005EC60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7DEAAD2525D3410005EC60 /* Main.storyboard */; };
 		3A7DEABB2525D3410005EC60 /* ContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DEABA2525D3410005EC60 /* ContactTests.swift */; };
-		3A7DEAC62525D3410005EC60 /* ContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DEAC52525D3410005EC60 /* ContactUITests.swift */; };
+		3AFF6EEB252824A40071E94A /* UrlDecompositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF6EEA252824A40071E94A /* UrlDecompositionTests.swift */; };
+		3AFF6EF9252827C60071E94A /* UrlDecomposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF6EF8252827C60071E94A /* UrlDecomposition.swift */; };
+		3AFF6EFC252827E20071E94A /* UrlDecomposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF6EF8252827C60071E94A /* UrlDecomposition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,16 +32,16 @@
 			remoteGlobalIDString = 3A7DEAA32525D3400005EC60;
 			remoteInfo = Contact;
 		};
-		3A7DEAC22525D3410005EC60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A7DEA9C2525D3400005EC60 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3A7DEAA32525D3400005EC60;
-			remoteInfo = Contact;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A1E4B3825270524009BA589 /* OpenDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDialog.swift; sourceTree = "<group>"; };
+		3A1E4B3D25270A30009BA589 /* GrantExecutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantExecutable.swift; sourceTree = "<group>"; };
+		3A1E4B4125270B85009BA589 /* AlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDialog.swift; sourceTree = "<group>"; };
+		3A1E4B47252711C3009BA589 /* SaveDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDialog.swift; sourceTree = "<group>"; };
+		3A1E4B4C25272352009BA589 /* ScriptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptGenerator.swift; sourceTree = "<group>"; };
+		3A2EDC4B252755C80016AD73 /* ADragDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADragDropView.swift; sourceTree = "<group>"; };
+		3A2EDC4F252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+FilePathURL.swift"; sourceTree = "<group>"; };
 		3A7DEAA42525D3400005EC60 /* Contact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7DEAA72525D3400005EC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A7DEAA92525D3400005EC60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,9 +52,8 @@
 		3A7DEAB62525D3410005EC60 /* ContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7DEABA2525D3410005EC60 /* ContactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTests.swift; sourceTree = "<group>"; };
 		3A7DEABC2525D3410005EC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A7DEAC12525D3410005EC60 /* ContactUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A7DEAC52525D3410005EC60 /* ContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUITests.swift; sourceTree = "<group>"; };
-		3A7DEAC72525D3410005EC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AFF6EEA252824A40071E94A /* UrlDecompositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlDecompositionTests.swift; sourceTree = "<group>"; };
+		3AFF6EF8252827C60071E94A /* UrlDecomposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlDecomposition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,22 +71,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A7DEABE2525D3410005EC60 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1E4B3C25270A09009BA589 /* FileAttribute */ = {
+			isa = PBXGroup;
+			children = (
+				3A1E4B3D25270A30009BA589 /* GrantExecutable.swift */,
+			);
+			path = FileAttribute;
+			sourceTree = "<group>";
+		};
+		3A1E4B4B2527233C009BA589 /* ScriptGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				3A1E4B4C25272352009BA589 /* ScriptGenerator.swift */,
+				3AFF6EF8252827C60071E94A /* UrlDecomposition.swift */,
+			);
+			path = ScriptGenerator;
+			sourceTree = "<group>";
+		};
+		3A2EDC4A252755850016AD73 /* ADragDropView */ = {
+			isa = PBXGroup;
+			children = (
+				3A2EDC4F252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift */,
+				3A2EDC4B252755C80016AD73 /* ADragDropView.swift */,
+			);
+			path = ADragDropView;
+			sourceTree = "<group>";
+		};
 		3A7DEA9B2525D3400005EC60 = {
 			isa = PBXGroup;
 			children = (
 				3A7DEAA62525D3400005EC60 /* Contact */,
 				3A7DEAB92525D3410005EC60 /* ContactTests */,
-				3A7DEAC42525D3410005EC60 /* ContactUITests */,
 				3A7DEAA52525D3400005EC60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,7 +114,6 @@
 			children = (
 				3A7DEAA42525D3400005EC60 /* Contact.app */,
 				3A7DEAB62525D3410005EC60 /* ContactTests.xctest */,
-				3A7DEAC12525D3410005EC60 /* ContactUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +121,10 @@
 		3A7DEAA62525D3400005EC60 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				3A2EDC4A252755850016AD73 /* ADragDropView */,
+				3AA0726F2527041A000537AE /* Dialog */,
+				3A1E4B3C25270A09009BA589 /* FileAttribute */,
+				3A1E4B4B2527233C009BA589 /* ScriptGenerator */,
 				3A7DEAA72525D3400005EC60 /* AppDelegate.swift */,
 				3A7DEAA92525D3400005EC60 /* ViewController.swift */,
 				3A7DEAAB2525D3410005EC60 /* Assets.xcassets */,
@@ -111,17 +140,19 @@
 			children = (
 				3A7DEABA2525D3410005EC60 /* ContactTests.swift */,
 				3A7DEABC2525D3410005EC60 /* Info.plist */,
+				3AFF6EEA252824A40071E94A /* UrlDecompositionTests.swift */,
 			);
 			path = ContactTests;
 			sourceTree = "<group>";
 		};
-		3A7DEAC42525D3410005EC60 /* ContactUITests */ = {
+		3AA0726F2527041A000537AE /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
-				3A7DEAC52525D3410005EC60 /* ContactUITests.swift */,
-				3A7DEAC72525D3410005EC60 /* Info.plist */,
+				3A1E4B3825270524009BA589 /* OpenDialog.swift */,
+				3A1E4B4125270B85009BA589 /* AlertDialog.swift */,
+				3A1E4B47252711C3009BA589 /* SaveDialog.swift */,
 			);
-			path = ContactUITests;
+			path = Dialog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,24 +193,6 @@
 			productReference = 3A7DEAB62525D3410005EC60 /* ContactTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3A7DEAC02525D3410005EC60 /* ContactUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3A7DEAD02525D3410005EC60 /* Build configuration list for PBXNativeTarget "ContactUITests" */;
-			buildPhases = (
-				3A7DEABD2525D3410005EC60 /* Sources */,
-				3A7DEABE2525D3410005EC60 /* Frameworks */,
-				3A7DEABF2525D3410005EC60 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3A7DEAC32525D3410005EC60 /* PBXTargetDependency */,
-			);
-			name = ContactUITests;
-			productName = ContactUITests;
-			productReference = 3A7DEAC12525D3410005EC60 /* ContactUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -193,10 +206,6 @@
 						CreatedOnToolsVersion = 12.0.1;
 					};
 					3A7DEAB52525D3410005EC60 = {
-						CreatedOnToolsVersion = 12.0.1;
-						TestTargetID = 3A7DEAA32525D3400005EC60;
-					};
-					3A7DEAC02525D3410005EC60 = {
 						CreatedOnToolsVersion = 12.0.1;
 						TestTargetID = 3A7DEAA32525D3400005EC60;
 					};
@@ -217,7 +226,6 @@
 			targets = (
 				3A7DEAA32525D3400005EC60 /* Contact */,
 				3A7DEAB52525D3410005EC60 /* ContactTests */,
-				3A7DEAC02525D3410005EC60 /* ContactUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,13 +247,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A7DEABF2525D3410005EC60 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -254,7 +255,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7DEAAA2525D3400005EC60 /* ViewController.swift in Sources */,
+				3AFF6EF9252827C60071E94A /* UrlDecomposition.swift in Sources */,
+				3A1E4B3925270524009BA589 /* OpenDialog.swift in Sources */,
+				3A1E4B3E25270A30009BA589 /* GrantExecutable.swift in Sources */,
+				3A1E4B4225270B85009BA589 /* AlertDialog.swift in Sources */,
+				3A1E4B48252711C3009BA589 /* SaveDialog.swift in Sources */,
+				3A2EDC4C252755C80016AD73 /* ADragDropView.swift in Sources */,
 				3A7DEAA82525D3400005EC60 /* AppDelegate.swift in Sources */,
+				3A1E4B4D25272352009BA589 /* ScriptGenerator.swift in Sources */,
+				3A2EDC50252755D60016AD73 /* NSDraggingInfo+FilePathURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,14 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7DEABB2525D3410005EC60 /* ContactTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3A7DEABD2525D3410005EC60 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A7DEAC62525D3410005EC60 /* ContactUITests.swift in Sources */,
+				3AFF6EFC252827E20071E94A /* UrlDecomposition.swift in Sources */,
+				3AFF6EEB252824A40071E94A /* UrlDecompositionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +284,6 @@
 			isa = PBXTargetDependency;
 			target = 3A7DEAA32525D3400005EC60 /* Contact */;
 			targetProxy = 3A7DEAB72525D3410005EC60 /* PBXContainerItemProxy */;
-		};
-		3A7DEAC32525D3410005EC60 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3A7DEAA32525D3400005EC60 /* Contact */;
-			targetProxy = 3A7DEAC22525D3410005EC60 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -352,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -422,8 +420,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Contact/Contact.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AM4295Q4D6;
 				INFOPLIST_FILE = Contact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,8 +441,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Contact/Contact.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AM4295Q4D6;
 				INFOPLIST_FILE = Contact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,44 +498,6 @@
 			};
 			name = Release;
 		};
-		3A7DEAD12525D3410005EC60 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ContactUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.namocom.ContactUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Contact;
-			};
-			name = Debug;
-		};
-		3A7DEAD22525D3410005EC60 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ContactUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.namocom.ContactUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Contact;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -560,15 +524,6 @@
 			buildConfigurations = (
 				3A7DEACE2525D3410005EC60 /* Debug */,
 				3A7DEACF2525D3410005EC60 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3A7DEAD02525D3410005EC60 /* Build configuration list for PBXNativeTarget "ContactUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3A7DEAD12525D3410005EC60 /* Debug */,
-				3A7DEAD22525D3410005EC60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
