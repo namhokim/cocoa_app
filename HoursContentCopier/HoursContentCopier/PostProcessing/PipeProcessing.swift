@@ -63,6 +63,7 @@ class PipeProcessing {
             self.execShellScript(tmpShFilePath: tmpShFilePath, tmpFilePath: tmpFilePath)
         }
         taskChmod.launch()
+        taskChmod.waitUntilExit()
     }
     
     private func execShellScript(tmpShFilePath: URL, tmpFilePath: URL) {
@@ -86,5 +87,6 @@ class PipeProcessing {
             self.cleanTmpFile(tmpFilePath: tmpFilePath, tmpShFilePath: tmpShFilePath)
         }
         task.launch()
+        task.waitUntilExit()
     }
 }
