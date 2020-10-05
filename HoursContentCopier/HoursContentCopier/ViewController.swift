@@ -55,7 +55,7 @@ class ViewController: NSViewController, LoginViewControllerDelegate, CompletePos
         self.titleWithVersion = "\(productName!) (v\(appVersion!))"
         
         postProcHistoryItems = PostProcessingHistoryItems()
-        postProcHistoryItems!.initData(initItems: HistoryItemByUserDefaults.load())
+        postProcHistoryItems!.initData(HistoryItemByUserDefaults.load())
         postProcessingCmds.usesDataSource = true
         postProcessingCmds.dataSource = postProcHistoryItems
         postProcessingCmds.completes = true

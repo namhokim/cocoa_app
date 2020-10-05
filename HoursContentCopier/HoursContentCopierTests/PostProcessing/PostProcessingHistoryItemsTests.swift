@@ -19,7 +19,8 @@ class PostProcessingHistoryItemsTests: XCTestCase {
     func testInitializedWithDataReturnsSizeIsZero() {
         let items = ["grep first"]
         
-        let sut = PostProcessingHistoryItems(initItems: items)
+        let sut = PostProcessingHistoryItems()
+        sut.initData(items)
         
         XCTAssert(sut.size() == 1, "Initialized One Data size will be 1.")
     }
@@ -27,13 +28,14 @@ class PostProcessingHistoryItemsTests: XCTestCase {
     func testInitializedWithSixDataReturnsSizeIsFive() {
         let items = ["1", "2", "3", "4", "5", "6"]
         
-        let sut = PostProcessingHistoryItems(initItems: items)
+        let sut = PostProcessingHistoryItems()
+        sut.initData(items)
         
         XCTAssert(sut.size() == 5, "Initialized One Data size will be 5.")
     }
     
     func testAddOneItemReturnsOneSize() {
-        var sut = PostProcessingHistoryItems()
+        let sut = PostProcessingHistoryItems()
         
         sut.add(command: "grep break")
         
@@ -41,7 +43,7 @@ class PostProcessingHistoryItemsTests: XCTestCase {
     }
     
     func testAddTwoItemReturnsTwoSize() {
-        var sut = PostProcessingHistoryItems()
+        let sut = PostProcessingHistoryItems()
         
         sut.add(command: "grep break")
         sut.add(command: "grep hint")
@@ -50,7 +52,7 @@ class PostProcessingHistoryItemsTests: XCTestCase {
     }
     
     func testAddSixItemReturnsOnlyFiveSize() {
-        var sut = PostProcessingHistoryItems()
+        let sut = PostProcessingHistoryItems()
         
         sut.add(command: "grep 1")
         sut.add(command: "grep 2")
@@ -63,7 +65,7 @@ class PostProcessingHistoryItemsTests: XCTestCase {
     }
     
     func testAddSameValueMultipleReturnsOnlyOneSize() {
-        var sut = PostProcessingHistoryItems()
+        let sut = PostProcessingHistoryItems()
         
         sut.add(command: "grep 1")
         sut.add(command: "grep 1")

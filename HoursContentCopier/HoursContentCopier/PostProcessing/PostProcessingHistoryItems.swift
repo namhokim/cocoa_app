@@ -18,7 +18,7 @@ class PostProcessingHistoryItems : NSObject, NSComboBoxDataSource {
         items = Array<String>()
     }
     
-    func initData(initItems: Array<String>) {
+    func initData(_ initItems: Array<String>) {
         items = initItems
         ensureLimitSize()
     }
