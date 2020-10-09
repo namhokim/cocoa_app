@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Contact
 //
-//  Created by 김남호 on 20-10-1.
+//  Created by namo on 20-10-1.
 //
 
 import Cocoa
@@ -51,6 +51,7 @@ class ViewController: NSViewController {
         let url = URL(string: "https://namocom.tistory.com/901")!
         NSWorkspace.shared.open(url)
     }
+    
 
     private func applicationTitleByVersion() {
         let productName = Bundle.main.infoDictionary?["CFBundleName"] as? String
@@ -63,7 +64,7 @@ class ViewController: NSViewController {
         dragDropView.delegate = self
     }
     
-    private func processing(_ urls: [URL]) {
+    func processing(_ urls: [URL]) {
         messageText.stringValue = ProcessingStatus.onProcessingMessage
         let filename = generateTemporaryFilePath()
         let scriptGen = ScriptGenerator(urls)
