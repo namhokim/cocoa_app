@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Contact
 //
-//  Created by 김남호 on 20-10-1.
+//  Created by namo on 20-10-1.
 //
 
 import Cocoa
@@ -26,6 +26,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
     
+    
+    func application(_ sender: NSApplication, openFiles filenames: [String]) {
+        let rootViewController = NSApplication.shared.mainWindow?.windowController?.contentViewController as! ViewController
+        let fileUrls : [URL] = stringsToUrls(filenames)
+        rootViewController.processing(fileUrls)
+    }
+    
+    private func stringsToUrls(_ strings: [String]) -> [URL] {
+        var urls : [URL] = []
+        for str in strings{
+            urls.append(URL(fileURLWithPath: str))
+        }
+        return urls
+    }
     
 }
 
