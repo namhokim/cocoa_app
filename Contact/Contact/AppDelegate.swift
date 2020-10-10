@@ -33,13 +33,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         rootViewController.processing(fileUrls)
     }
     
-    private func stringsToUrls(_ strings: [String]) -> [URL] {
-        var urls : [URL] = []
-        for str in strings{
-            urls.append(URL(fileURLWithPath: str))
-        }
-        return urls
-    }
-    
 }
 

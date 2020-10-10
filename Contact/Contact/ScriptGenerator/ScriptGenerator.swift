@@ -1,7 +1,7 @@
 import Foundation
 
 class ScriptGenerator {
-    let urls : [URL]
+    let urls: [URL]
     
     init(_ urls: [URL]) {
         self.urls = urls
@@ -21,9 +21,31 @@ class ScriptGenerator {
     
     private func generateData() -> Data {
         var content = Data.init()
-        content.append("#!/bin/bash\n".data(using: .ascii)!)    // shebang
+        content.append(generateShebang())
+        content.append(generateRenameScript(self.urls))
+        return content
+    }
+    
+    private func generateShebang() -> Data {
+        var content = Data.init()
+        content.append("#!/bin/bash\n".data(using: .ascii)!)
+        return content
+    }
+    
+    private func generateRenameScript(_ urls: [URL]) -> Data {
+        var content = Data.init()
         
-        for url in self.urls {
+        for url in urls {
+            if url.isDirectory {
+                let subpaths = try! FileManager.default.subpathsOfDirectory(atPath: url.path)
+                let subUrls = stringsToUrls(subpaths, basePath: url.path)
+                content.append(generateRenameScript(subUrls))
+            }
+            
+            if url.isHidden {   // eg. .DS_Store
+                continue
+            }
+            
             let decomp = UrlDecomposition(url)
             let path = decomp.pathPart.replacingOccurrences(of: "\"", with: "\\\"")
             let file = decomp.lastPart.replacingOccurrences(of: "\"", with: "\\\"")
@@ -38,5 +60,24 @@ class ScriptGenerator {
         }
         
         return content
+    }
+    
+}
+
+extension URL {
+    /// `true` is hidden (invisible) or `false` is not hidden (visible)
+    var isHidden: Bool {
+        get {
+            return (try? resourceValues(forKeys: [.isHiddenKey]))?.isHidden == true
+        }
+        set {
+            var resourceValues = URLResourceValues()
+            resourceValues.isHidden = newValue
+            do {
+                try setResourceValues(resourceValues)
+            } catch {
+                print("isHidden error:", error)
+            }
+        }
     }
 }
