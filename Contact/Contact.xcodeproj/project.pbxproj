@@ -19,6 +19,7 @@
 		3A7DEAAC2525D3410005EC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7DEAAB2525D3410005EC60 /* Assets.xcassets */; };
 		3A7DEAAF2525D3410005EC60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7DEAAD2525D3410005EC60 /* Main.storyboard */; };
 		3A7DEABB2525D3410005EC60 /* ContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DEABA2525D3410005EC60 /* ContactTests.swift */; };
+		3AE37EAA2531C303009DBC43 /* FileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE37EA92531C303009DBC43 /* FileUtility.swift */; };
 		3AFF6EEB252824A40071E94A /* UrlDecompositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF6EEA252824A40071E94A /* UrlDecompositionTests.swift */; };
 		3AFF6EF9252827C60071E94A /* UrlDecomposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF6EF8252827C60071E94A /* UrlDecomposition.swift */; };
 		3AFF6EFC252827E20071E94A /* UrlDecomposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF6EF8252827C60071E94A /* UrlDecomposition.swift */; };
@@ -52,6 +53,7 @@
 		3A7DEAB62525D3410005EC60 /* ContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7DEABA2525D3410005EC60 /* ContactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTests.swift; sourceTree = "<group>"; };
 		3A7DEABC2525D3410005EC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE37EA92531C303009DBC43 /* FileUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtility.swift; sourceTree = "<group>"; };
 		3AFF6EEA252824A40071E94A /* UrlDecompositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlDecompositionTests.swift; sourceTree = "<group>"; };
 		3AFF6EF8252827C60071E94A /* UrlDecomposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlDecomposition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 			children = (
 				3A1E4B4C25272352009BA589 /* ScriptGenerator.swift */,
 				3AFF6EF8252827C60071E94A /* UrlDecomposition.swift */,
+				3AE37EA92531C303009DBC43 /* FileUtility.swift */,
 			);
 			path = ScriptGenerator;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				3A7DEAAA2525D3400005EC60 /* ViewController.swift in Sources */,
 				3AFF6EF9252827C60071E94A /* UrlDecomposition.swift in Sources */,
+				3AE37EAA2531C303009DBC43 /* FileUtility.swift in Sources */,
 				3A1E4B3925270524009BA589 /* OpenDialog.swift in Sources */,
 				3A1E4B3E25270A30009BA589 /* GrantExecutable.swift in Sources */,
 				3A1E4B4225270B85009BA589 /* AlertDialog.swift in Sources */,
