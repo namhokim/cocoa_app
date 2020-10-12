@@ -6,22 +6,22 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
-        <dict>
-          <key>CFBundleTypeExtensions</key>
-          <array>
-            <string>*</string>
-          </array>
-          <key>CFBundleTypeName</key>
-          <string>All documents</string>
-          <key>CFBundleTypeOSTypes</key>
-          <array>
-            <string>****</string>
-          </array>
-          <key>CFBundleTypeRole</key>
-          <string>Editor</string>
-          <key>LSTypeIsPackage</key>
-          <false/>
-        </dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>*</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>All documents</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>****</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
