@@ -32,9 +32,7 @@ private func executeProcess(_ command: String, _ arguments: [String]) {
     task.terminationHandler = { task in
         guard task.terminationStatus == 0
         else {
-            let errorMsg = "The process fail to operate. \(task.terminationStatus)"
-            let dialog = AlertDialog(errorMsg)
-            dialog.showDialogModal()
+            NSLog("The process fail to operate. status = \(task.terminationStatus), reason = \(task.terminationReason)")
             return
         }
     }

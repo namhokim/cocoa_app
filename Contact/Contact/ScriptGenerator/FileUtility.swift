@@ -10,8 +10,11 @@ func stringsToUrls(_ strings: [String]) -> [URL] {
 
 func stringsToUrls(_ strings: [String], basePath: String) -> [URL] {
     var urls : [URL] = []
+    
     for str in strings{
-        urls.append(URL(fileURLWithPath: "\(basePath)/\(str)"))
+        if (!str.hasSuffix(".app")) {
+            urls.append(URL(fileURLWithPath: "\(basePath)/\(str)"))
+        }
     }
     return urls
 }
