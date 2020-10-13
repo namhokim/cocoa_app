@@ -36,8 +36,8 @@ class ScriptGenerator {
         var content = Data.init()
         
         for url in urls {
-            if url.isDirectory {
-                let subpaths = try! FileManager.default.subpathsOfDirectory(atPath: url.path)
+            if url.isDirectory && !url.path.hasSuffix(".app") {
+                let subpaths = try! FileManager.default.contentsOfDirectory(atPath: url.path)
                 let subUrls = stringsToUrls(subpaths, basePath: url.path)
                 content.append(generateRenameScript(subUrls))
             }

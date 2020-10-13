@@ -74,7 +74,7 @@ class PipeProcessing {
         task.terminationHandler = { task in
             guard task.terminationStatus == 0
             else {
-                NSLog("The process fail to operate. \(task.terminationStatus)")
+                NSLog("The process fail to operate. status = \(task.terminationStatus), reason = \(task.terminationReason)")
                 self.cleanTmpFile(tmpFilePath: tmpFilePath, tmpShFilePath: tmpShFilePath)
                 return
             }
