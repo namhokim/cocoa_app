@@ -48,7 +48,7 @@ class ViewController: NSViewController {
     }
 
     @IBAction func showHelp(_ sender: Any) {
-        let url = URL(string: "https://namocom.tistory.com/901")!
+        let url = URL(string: "https://namocom.tistory.com/907")!
         NSWorkspace.shared.open(url)
     }
     
